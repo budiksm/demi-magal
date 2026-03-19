@@ -1,6 +1,7 @@
 import React from 'react';
+import { BabyBreath1, CallaLily, Orchid, Tulip } from './doodles';
 
-type DoodleType = 'star' | 'arrow' | 'heart' | 'line' | 'flower' | 'calla-lily' | 'orchid' | 'tulip' | 'baby-breath';
+type DoodleType = 'star' | 'arrow' | 'heart' | 'line' | 'flower' | 'calla-lily' | 'orchid' | 'tulip' | 'baby-breath' | 'rose';
 
 interface DoodleProps {
   type: DoodleType;
@@ -48,47 +49,23 @@ export default function Doodle({ type, className = '' }: DoodleProps) {
     );
   }
   if (type === 'calla-lily') {
-    return (
-      <svg className={className} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50 95 C50 95 45 70 45 50 C45 30 60 10 80 5 C60 5 40 20 35 45 C30 70 50 95 50 95 Z" fill="currentColor" />
-        <path d="M50 95 C50 95 55 70 55 50 C55 30 40 10 20 5 C40 5 60 20 65 45 C70 70 50 95 50 95 Z" fill="currentColor" opacity="0.8" />
-        <path d="M50 60 L50 30" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
-      </svg>
-    );
+    return <CallaLily className={className} />;
   }
   if (type === 'orchid') {
-    return (
-      <svg className={className} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="8" fill="currentColor" />
-        <path d="M50 42 Q70 10 90 42 T50 58 Q30 10 10 42 T50 42" fill="currentColor" opacity="0.4" />
-        <path d="M42 50 Q10 70 42 90 T58 50 Q90 70 58 90 T42 50" fill="currentColor" opacity="0.6" />
-        <path d="M50 58 Q70 90 90 58 T50 42 Q30 90 10 58 T50 58" fill="currentColor" opacity="0.8" />
-      </svg>
-    );
+    return <Orchid className={className} />;
   }
   if (type === 'tulip') {
-    return (
-      <svg className={className} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50 90 V40" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-        <path d="M30 50 C30 30 45 20 50 40 C55 20 70 30 70 50 C70 70 50 80 50 80 C50 80 30 70 30 50 Z" fill="currentColor" />
-        <path d="M50 80 C50 80 40 60 50 40 C60 60 50 80 50 80 Z" fill="currentColor" opacity="0.7" />
-      </svg>
-    );
+    return <Tulip className={className} />;
   }
   if (type === 'baby-breath') {
+    return <BabyBreath1 className={className} />;
+  }
+  if (type === 'rose') {
     return (
       <svg className={className} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="30" r="3" fill="currentColor" />
-        <circle cx="40" cy="20" r="2" fill="currentColor" />
-        <circle cx="60" cy="25" r="3" fill="currentColor" />
-        <circle cx="80" cy="35" r="2" fill="currentColor" />
-        <circle cx="30" cy="50" r="3" fill="currentColor" />
-        <circle cx="55" cy="45" r="2" fill="currentColor" />
-        <circle cx="75" cy="60" r="3" fill="currentColor" />
-        <circle cx="15" cy="70" r="2" fill="currentColor" />
-        <circle cx="45" cy="75" r="3" fill="currentColor" />
-        <circle cx="65" cy="80" r="2" fill="currentColor" />
-        <path d="M50 90 Q 50 60 20 30 M 50 90 Q 50 60 80 35 M 50 90 Q 50 60 30 50 M 50 90 Q 50 60 75 60" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+        <path d="M50 90 C 50 90 20 60 20 40 C 20 20 35 10 50 20 C 65 10 80 20 80 40 C 80 60 50 90 50 90 Z" fill="currentColor" />
+        <path d="M50 80 C 50 80 30 60 30 45 C 30 30 40 25 50 30 C 60 25 70 30 70 45 C 70 60 50 80 50 80 Z" fill="currentColor" opacity="0.7" />
+        <path d="M50 70 C 50 70 40 55 50 40 C 60 55 50 70 50 70 Z" fill="currentColor" opacity="0.5" />
       </svg>
     );
   }
