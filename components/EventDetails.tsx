@@ -1,68 +1,75 @@
 import { MapPin, Calendar, Clock } from 'lucide-react';
+import Doodle from './Doodle';
 
 export default function EventDetails() {
   return (
-    <section className="py-32 px-6 bg-burgundy text-cream">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="font-serif text-4xl md:text-5xl mb-4 text-peach">Wedding Events</h2>
-          <div className="w-12 h-[1px] bg-peach/50 mx-auto"></div>
+    <section className="py-20 px-6">
+      <div className="text-center mb-16 relative">
+        <h2 className="font-serif text-5xl md:text-6xl mb-2">Wedding Events</h2>
+        <Doodle type="flower" className="w-8 h-8 text-peach mx-auto" />
+      </div>
+
+      <div className="flex flex-col gap-8">
+        {/* Akad Card */}
+        <div className="relative bg-white p-8 rounded-3xl shadow-sm border-2 border-dashed border-peach/60 -rotate-1 hover:rotate-0 transition-transform">
+          <Doodle type="star" className="absolute -top-3 -right-3 w-8 h-8 text-olive bg-cream rounded-full p-1" />
+          
+          <h3 className="font-serif text-4xl mb-6 text-center text-burgundy">Akad Nikah</h3>
+          
+          <div className="space-y-4 mb-8 font-sans text-sm text-burgundy/80">
+            <div className="flex items-center gap-4 bg-peach/10 p-3 rounded-xl">
+              <Calendar className="text-olive shrink-0" size={20} />
+              <p>Saturday, 24 October 2026</p>
+            </div>
+            
+            <div className="flex items-center gap-4 bg-peach/10 p-3 rounded-xl">
+              <Clock className="text-olive shrink-0" size={20} />
+              <p>08:00 AM - 10:00 AM</p>
+            </div>
+            
+            <div className="flex items-start gap-4 bg-peach/10 p-3 rounded-xl">
+              <MapPin className="text-olive shrink-0 mt-1" size={20} />
+              <div>
+                <p className="font-bold text-burgundy">The Grand Mosque</p>
+                <p>Jl. Sudirman No. 1, Jakarta</p>
+              </div>
+            </div>
+          </div>
+
+          <button className="w-full py-3 bg-olive text-cream rounded-xl hover:bg-olive/90 transition-colors font-serif text-xl shadow-sm cursor-pointer">
+            View Location
+          </button>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Akad Card */}
-          <div className="border border-peach/20 p-10 flex flex-col items-center text-center rounded-2xl bg-burgundy/50 backdrop-blur-sm">
-            <h3 className="font-serif text-3xl mb-8 text-peach">Akad Nikah</h3>
+        {/* Resepsi Card */}
+        <div className="relative bg-white p-8 rounded-3xl shadow-sm border-2 border-dashed border-olive/40 rotate-1 hover:rotate-0 transition-transform">
+          <Doodle type="heart" className="absolute -top-3 -left-3 w-8 h-8 text-peach bg-cream rounded-full p-1" />
+          
+          <h3 className="font-serif text-4xl mb-6 text-center text-burgundy">Wedding Reception</h3>
+          
+          <div className="space-y-4 mb-8 font-sans text-sm text-burgundy/80">
+            <div className="flex items-center gap-4 bg-olive/10 p-3 rounded-xl">
+              <Calendar className="text-olive shrink-0" size={20} />
+              <p>Saturday, 24 October 2026</p>
+            </div>
             
-            <div className="space-y-6 mb-10 w-full">
-              <div className="flex flex-col items-center gap-2">
-                <Calendar className="text-olive" size={24} />
-                <p className="tracking-widest uppercase text-sm">Saturday, 24 October 2026</p>
-              </div>
-              
-              <div className="flex flex-col items-center gap-2">
-                <Clock className="text-olive" size={24} />
-                <p className="tracking-widest uppercase text-sm">08:00 AM - 10:00 AM</p>
-              </div>
-              
-              <div className="flex flex-col items-center gap-2">
-                <MapPin className="text-olive" size={24} />
-                <p className="font-medium">The Grand Mosque</p>
-                <p className="text-sm text-cream/70">Jl. Sudirman No. 1, Jakarta</p>
+            <div className="flex items-center gap-4 bg-olive/10 p-3 rounded-xl">
+              <Clock className="text-olive shrink-0" size={20} />
+              <p>11:00 AM - 02:00 PM</p>
+            </div>
+            
+            <div className="flex items-start gap-4 bg-olive/10 p-3 rounded-xl">
+              <MapPin className="text-olive shrink-0 mt-1" size={20} />
+              <div>
+                <p className="font-bold text-burgundy">Grand Ballroom Hotel</p>
+                <p>Jl. Thamrin No. 2, Jakarta</p>
               </div>
             </div>
-
-            <button className="px-8 py-3 border border-peach text-peach rounded-full hover:bg-peach hover:text-burgundy transition-colors duration-300 uppercase tracking-widest text-xs w-full max-w-xs cursor-pointer">
-              View Location
-            </button>
           </div>
 
-          {/* Resepsi Card */}
-          <div className="border border-peach/20 p-10 flex flex-col items-center text-center rounded-2xl bg-burgundy/50 backdrop-blur-sm">
-            <h3 className="font-serif text-3xl mb-8 text-peach">Wedding Reception</h3>
-            
-            <div className="space-y-6 mb-10 w-full">
-              <div className="flex flex-col items-center gap-2">
-                <Calendar className="text-olive" size={24} />
-                <p className="tracking-widest uppercase text-sm">Saturday, 24 October 2026</p>
-              </div>
-              
-              <div className="flex flex-col items-center gap-2">
-                <Clock className="text-olive" size={24} />
-                <p className="tracking-widest uppercase text-sm">11:00 AM - 02:00 PM</p>
-              </div>
-              
-              <div className="flex flex-col items-center gap-2">
-                <MapPin className="text-olive" size={24} />
-                <p className="font-medium">Grand Ballroom Hotel</p>
-                <p className="text-sm text-cream/70">Jl. Thamrin No. 2, Jakarta</p>
-              </div>
-            </div>
-
-            <button className="px-8 py-3 border border-peach text-peach rounded-full hover:bg-peach hover:text-burgundy transition-colors duration-300 uppercase tracking-widest text-xs w-full max-w-xs cursor-pointer">
-              View Location
-            </button>
-          </div>
+          <button className="w-full py-3 bg-peach text-burgundy rounded-xl hover:bg-peach/90 transition-colors font-serif text-xl shadow-sm cursor-pointer">
+            View Location
+          </button>
         </div>
       </div>
     </section>

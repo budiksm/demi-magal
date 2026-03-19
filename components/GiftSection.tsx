@@ -1,28 +1,32 @@
 import { Copy, Gift } from 'lucide-react';
+import Doodle from './Doodle';
 
 export default function GiftSection() {
   return (
-    <section className="py-32 px-6 max-w-3xl mx-auto text-center">
-      <div className="mb-20">
-        <Gift className="mx-auto text-olive mb-6" size={40} strokeWidth={1.5} />
-        <h2 className="font-serif text-4xl md:text-5xl mb-4">Wedding Gift</h2>
-        <div className="w-12 h-[1px] bg-olive mx-auto mb-8"></div>
-        <p className="text-burgundy/80 leading-relaxed">
-          Your presence at our wedding is the greatest gift of all. However, should you wish to help us celebrate with a gift, a wishing well will be provided on the day.
+    <section className="py-20 px-6 text-center relative">
+      <Doodle type="heart" className="absolute top-10 left-8 w-8 h-8 text-peach/60 rotate-12" />
+      
+      <div className="mb-12">
+        <div className="inline-block p-4 bg-olive/10 rounded-full mb-4">
+          <Gift className="text-olive" size={32} strokeWidth={1.5} />
+        </div>
+        <h2 className="font-serif text-5xl mb-4">Wedding Gift</h2>
+        <p className="font-sans text-sm text-burgundy/80 leading-relaxed max-w-sm mx-auto">
+          Your presence is the greatest gift. However, if you wish to bless us with a gift, you can use the details below.
         </p>
       </div>
 
-      <div className="max-w-md mx-auto space-y-6">
-        <div className="border border-burgundy/10 p-8 rounded-2xl bg-cream shadow-sm">
-          <p className="text-sm tracking-widest uppercase text-olive mb-2">BCA</p>
-          <p className="font-serif text-2xl mb-1">1234 5678 90</p>
-          <p className="text-burgundy/70 mb-6">a.n. Romeo Montague</p>
-          
-          <button className="flex items-center justify-center gap-2 w-full py-3 border border-burgundy text-burgundy rounded-full hover:bg-burgundy hover:text-cream transition-colors duration-300 uppercase tracking-widest text-xs cursor-pointer">
-            <Copy size={14} />
-            Copy Account Number
-          </button>
-        </div>
+      <div className="bg-white p-6 rounded-2xl border-2 border-dashed border-olive/30 shadow-sm relative rotate-1 hover:rotate-0 transition-transform max-w-sm mx-auto">
+        <Doodle type="line" className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-4 text-peach bg-cream px-2" />
+        
+        <p className="font-serif text-2xl text-olive mb-1">BCA Bank</p>
+        <p className="font-sans font-bold text-xl mb-1 tracking-wider">1234 5678 90</p>
+        <p className="font-sans text-sm text-burgundy/70 mb-6">Romeo Montague</p>
+        
+        <button className="flex items-center justify-center gap-2 w-full py-3 bg-peach/20 text-burgundy rounded-xl hover:bg-peach/40 transition-colors font-serif text-xl cursor-pointer">
+          <Copy size={16} />
+          Copy Number
+        </button>
       </div>
     </section>
   );
