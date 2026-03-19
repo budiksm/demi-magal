@@ -27,6 +27,14 @@ export default function CoverSection({ onOpen }: { onOpen: () => void }) {
              />
            </div>
            
+           {/* Decorative text around photo */}
+           <p className="absolute -left-20 top-1/2 -rotate-10 text-olive font-[family-name:var(--font-beth-ellen)] text-2xl opacity-90">so real</p>
+           <p className="absolute -right-24 top-1/2 rotate-8 text-soft-peach font-[family-name:var(--font-beth-ellen)] text-2xl opacity-90">getting married</p>
+
+           {/* Small doodle ornaments */}
+           <Doodle type="star" className="absolute -top-6 -right-6 w-4 h-4 text-cream/60" />
+           <Doodle type="flower" className="absolute -bottom-4 -left-4 w-4 h-4 text-cream/60" />
+           
            {/* MAIN ACCENTS: Asymmetrical florals */}
            <Doodle 
              type="calla-lily" 
@@ -40,23 +48,9 @@ export default function CoverSection({ onOpen }: { onOpen: () => void }) {
 
         {/* 3. TEXT: Below image */}
         <div className="flex flex-col items-center gap-1">
-          <p className="font-[family-name:var(--font-just-me)] text-2xl text-cream/80">The Wedding Of</p>
-          
-          <h1 className="font-[family-name:var(--font-just-me)] text-7xl leading-tight relative">
-            Budi & Tsalsa
+          <h1 className="font-[family-name:var(--font-mansalva)] text-7xl leading-tight relative tracking-tight">
+            Aku mengundang kamu!
           </h1>
-
-          <p className="font-[family-name:var(--font-just-me)] text-3xl text-cream/90 mt-2">
-            Pokonya Sabtu atau Minggu
-          </p>
-
-          <div className="mt-4 relative">
-            {/* MICRO DOODLES: Near text */}
-            <Doodle type="baby-breath" className="absolute -top-4 -left-6 w-6 h-6 text-cream/40" />
-            <p className="text-sm text-cream/60 font-sans tracking-widest uppercase">Jangan lupa, Magal</p>
-            <p className="font-[family-name:var(--font-just-me)] text-4xl bg-cream/10 px-6 py-2 rounded-lg transform -rotate-1 mt-2">Guest Name</p>
-            <Doodle type="flower" className="absolute -bottom-2 -right-4 w-6 h-6 text-soft-pink/50" />
-          </div>
         </div>
 
         {/* 4. BUTTON: Playful style */}
@@ -65,7 +59,7 @@ export default function CoverSection({ onOpen }: { onOpen: () => void }) {
           className="mt-8 relative z-50 flex items-center gap-2 px-8 py-3 bg-cream text-burgundy rounded-full hover:bg-cream/90 transition-transform hover:scale-105 duration-300 font-[family-name:var(--font-just-me)] text-2xl cursor-pointer shadow-lg active:scale-95 border-2 border-burgundy/20"
         >
           <MailOpen size={20} />
-          Open Invitation
+          klik klik klik
         </button>
       </div>
     </section>
