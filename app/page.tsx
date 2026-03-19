@@ -43,15 +43,15 @@ export default function Home() {
               <div className="w-full h-[60vh] lg:w-[65%] lg:sticky lg:top-0 lg:h-screen lg:self-start flex flex-col items-center justify-center relative">
                 <Image
                   src="https://picsum.photos/seed/wedding-main/1200/1600"
-                  alt="Budi & Tsalsa"
+                  alt="Romeo and Juliet"
                   fill
                   className="object-cover"
                   referrerPolicy="no-referrer"
                 />
                 
                 <div className="mt-8 text-center lg:hidden relative z-10 bg-cream/80 p-6 rounded-2xl backdrop-blur-sm">
-                  <h2 className="font-serif text-5xl text-burgundy">Budi & Tsalsa</h2>
-                  <p className="text-olive mt-2 font-serif text-xl">T . B . A</p>
+                  <h2 className="font-serif text-5xl text-burgundy">Romeo & Juliet</h2>
+                  <p className="text-olive mt-2 font-serif text-xl">24 . 10 . 2026</p>
                 </div>
               </div>
 
