@@ -18,7 +18,7 @@ export default function Home() {
   const [isOpened, setIsOpened] = useState(false);
 
   return (
-    <main className="min-h-screen bg-cream text-burgundy relative overflow-x-hidden">
+    <main className="min-h-screen bg-cream text-burgundy relative">
       <AnimatePresence mode="wait">
         {!isOpened ? (
           <motion.div
@@ -34,13 +34,13 @@ export default function Home() {
           <motion.div
             key="content"
             initial={{ y: '100%' }}
-            animate={{ y: 0 }}
+            animate={{ y: 0, transitionEnd: { transform: 'none' } }}
             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
             className="w-full"
           >
             <div className="flex flex-col lg:flex-row min-h-screen relative z-10 bg-cream">
               {/* LEFT SIDE: Sticky Image (Desktop) / Stacked (Mobile) */}
-              <div className="w-full h-[60vh] lg:w-[65%] lg:sticky lg:top-0 lg:h-screen flex flex-col items-center justify-center relative overflow-hidden">
+              <div className="w-full h-[60vh] lg:w-[65%] lg:sticky lg:top-0 lg:h-screen lg:self-start flex flex-col items-center justify-center relative">
                 <Image
                   src="https://picsum.photos/seed/wedding-main/1200/1600"
                   alt="Romeo and Juliet"
@@ -52,12 +52,6 @@ export default function Home() {
                 <div className="mt-8 text-center lg:hidden relative z-10 bg-cream/80 p-6 rounded-2xl backdrop-blur-sm">
                   <h2 className="font-serif text-5xl text-burgundy">Romeo & Juliet</h2>
                   <p className="text-olive mt-2 font-serif text-xl">24 . 10 . 2026</p>
-                </div>
-
-                {/* Scroll Indicator */}
-                <div className="absolute bottom-6 right-8 hidden lg:flex flex-col items-center text-cream drop-shadow-md animate-gentle-bounce z-10">
-                  <span className="font-serif text-xl mb-1">scroll down</span>
-                  <Doodle type="arrow" className="w-8 h-8 rotate-90" />
                 </div>
               </div>
 
