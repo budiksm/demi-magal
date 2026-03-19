@@ -4,27 +4,19 @@ import Doodle from './Doodle';
 
 export default function CoverSection({ onOpen }: { onOpen: () => void }) {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-[100dvh] px-6 py-6 text-center overflow-hidden bg-cream">
-      {/* Background Accents */}
-      <Doodle 
-        type="baby-breath" 
-        className="absolute top-10 left-10 w-24 h-24 text-olive/30 animate-pulse-soft pointer-events-none" 
-      />
-      <Doodle 
-        type="baby-breath" 
-        className="absolute bottom-20 right-10 w-24 h-24 text-peach/30 animate-pulse-soft pointer-events-none" 
-      />
+    <section className="relative flex flex-col items-center justify-center min-h-[100dvh] px-6 py-6 text-center overflow-hidden bg-burgundy text-cream">
       
-      {/* Subtle Ornaments */}
-      <div className="absolute top-20 right-20 w-4 h-4 rounded-full bg-olive/40 animate-pulse" />
-      <div className="absolute bottom-10 left-20 w-3 h-3 rounded-full bg-peach/50 animate-pulse" />
-      <div className="absolute top-1/3 left-10 w-2 h-2 rounded-full bg-burgundy/30" />
+      {/* 1. BACKGROUND PATTERN: Scattered florals */}
+      <Doodle type="baby-breath" className="absolute top-10 left-10 w-16 h-16 text-cream/20 animate-pulse-soft pointer-events-none" />
+      <Doodle type="flower" className="absolute top-1/4 right-20 w-12 h-12 text-soft-pink/20 pointer-events-none" />
+      <Doodle type="tulip" className="absolute bottom-1/4 left-20 w-16 h-16 text-olive/20 pointer-events-none" />
+      <Doodle type="baby-breath" className="absolute bottom-10 right-10 w-20 h-20 text-cream/20 animate-pulse-soft pointer-events-none" />
       
       <div className="z-10 flex flex-col items-center max-w-md mx-auto w-full relative">
         
-        {/* Playful Photobox */}
-        <div className="relative w-48 h-56 md:w-56 md:h-64 mb-6 rotate-3 animate-float bg-white p-3 pb-12 shadow-xl rounded-sm border border-gray-100">
-           <div className="relative w-full h-full bg-gray-200 overflow-hidden">
+        {/* 2. MAIN LAYOUT: Polaroid Photobox */}
+        <div className="relative w-56 h-64 mb-8 -rotate-2 animate-float bg-cream p-4 pb-16 shadow-2xl rounded-sm border border-cream/20">
+           <div className="relative w-full h-full bg-gray-200 overflow-hidden shadow-inner">
              <Image
                 src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWh3a3NxOTRjeXd1aXJ4Zmw2aHpwcWkxNmlkaWhpZzk0NXF2MjNmcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Kb4WlwEM9PiB8I7Yhc/giphy.gif"
                 alt="Couple Photobox"
@@ -34,55 +26,43 @@ export default function CoverSection({ onOpen }: { onOpen: () => void }) {
                 unoptimized
              />
            </div>
-           {/* Hero Element: CallaLily */}
+           
+           {/* MAIN ACCENTS: Asymmetrical florals */}
            <Doodle 
              type="calla-lily" 
-             className="absolute -bottom-12 -right-14 w-[170px] h-[170px] text-burgundy pointer-events-none z-20" 
+             className="absolute -bottom-12 -right-14 w-[160px] h-[160px] text-soft-pink pointer-events-none z-20" 
            />
-           <Doodle type="heart" className="absolute bottom-4 left-4 w-6 h-6 text-burgundy/20" />
+           <Doodle 
+             type="orchid" 
+             className="absolute -top-10 -left-10 w-[100px] h-[100px] text-olive pointer-events-none z-20" 
+           />
         </div>
 
-        <p className="font-serif text-2xl text-olive mb-0">The Wedding Of</p>
-        
-        <div className="relative flex items-center justify-center mb-0">
-          {/* Title Decoration: Orchid */}
-          <Doodle 
-            type="orchid" 
-            className="w-20 h-20 text-olive animate-float-slow mr-4" 
-          />
+        {/* 3. TEXT: Below image */}
+        <div className="flex flex-col items-center gap-1">
+          <p className="font-[family-name:var(--font-just-me)] text-2xl text-cream/80">The Wedding Of</p>
           
-          <h1 className="font-[family-name:var(--font-just-me)] text-7xl md:text-8xl leading-tight relative">
+          <h1 className="font-[family-name:var(--font-just-me)] text-7xl leading-tight relative">
             Budi & Tsalsa
-            <Doodle type="line" className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-40 h-6 text-peach/50 pointer-events-none" />
           </h1>
 
-          {/* Title Decoration: Tulip */}
-          <Doodle 
-            type="tulip" 
-            className="w-20 h-20 text-peach animate-float-slow ml-4" 
-          />
-        </div>
-        
-        <p className="font-[family-name:var(--font-just-me)] text-3xl text-olive mt-1 mb-4">
-          Pokonya Sabtu atau Minggu
-        </p>
+          <p className="font-[family-name:var(--font-just-me)] text-3xl text-cream/90 mt-2">
+            Pokonya Sabtu atau Minggu
+          </p>
 
-        <div className="mt-1 mb-6 relative">
-          <Doodle type="arrow" className="absolute -top-6 -left-8 w-8 h-8 text-olive/50 -rotate-45" />
-          <p className="text-sm text-burgundy/70 mb-1 font-sans">Jangan lupa, Magal</p>
-          <div className="relative inline-block">
-            <p className="font-[family-name:var(--font-just-me)] text-4xl bg-peach/20 px-6 py-2 rounded-lg transform -rotate-1">Guest Name</p>
-            {/* Small floral accent near guest name */}
-            <Doodle 
-              type="flower" 
-              className="absolute -top-2 -right-4 w-8 h-8 text-olive/40" 
-            />
+          <div className="mt-4 relative">
+            {/* MICRO DOODLES: Near text */}
+            <Doodle type="baby-breath" className="absolute -top-4 -left-6 w-6 h-6 text-cream/40" />
+            <p className="text-sm text-cream/60 font-sans tracking-widest uppercase">Jangan lupa, Magal</p>
+            <p className="font-[family-name:var(--font-just-me)] text-4xl bg-cream/10 px-6 py-2 rounded-lg transform -rotate-1 mt-2">Guest Name</p>
+            <Doodle type="flower" className="absolute -bottom-2 -right-4 w-6 h-6 text-soft-pink/50" />
           </div>
         </div>
 
+        {/* 4. BUTTON: Playful style */}
         <button
           onClick={onOpen}
-          className="relative z-50 flex items-center gap-2 px-8 py-4 bg-burgundy text-cream rounded-full hover:bg-burgundy/90 transition-transform hover:scale-105 duration-300 font-serif text-xl cursor-pointer shadow-lg active:scale-95"
+          className="mt-8 relative z-50 flex items-center gap-2 px-8 py-3 bg-cream text-burgundy rounded-full hover:bg-cream/90 transition-transform hover:scale-105 duration-300 font-[family-name:var(--font-just-me)] text-2xl cursor-pointer shadow-lg active:scale-95 border-2 border-burgundy/20"
         >
           <MailOpen size={20} />
           Open Invitation
