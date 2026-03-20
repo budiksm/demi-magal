@@ -28,8 +28,8 @@ export default function CoverSection({ onOpen }: { onOpen: () => void }) {
            </div>
            
            {/* Decorative text around photo */}
-           <p className="absolute -left-24 top-1/3 -rotate-10 text-olive font-[family-name:var(--font-beth-ellen)] text-2xl opacity-90 leading-tight">so<br/>real</p>
-           <p className="absolute -right-28 top-1/3 rotate-8 text-soft-peach font-[family-name:var(--font-beth-ellen)] text-2xl opacity-90 leading-tight">getting<br/>married</p>
+           <p className="absolute -left-20 top-1/2 -rotate-10 text-olive font-[family-name:var(--font-beth-ellen)] text-2xl opacity-90 leading-tight">so<br/>real</p>
+           <p className="absolute -right-20 top-1/2 rotate-8 text-cream font-[family-name:var(--font-beth-ellen)] text-2xl opacity-90 leading-tight">getting<br/>married</p>
 
            {/* Small doodle ornaments */}
            <Doodle type="star" className="absolute -top-6 -right-6 w-4 h-4 text-cream/60" />
@@ -50,10 +50,10 @@ export default function CoverSection({ onOpen }: { onOpen: () => void }) {
         {/* 3. TEXT: Below image */}
         <div className="flex flex-col items-center gap-1">
           <p className="font-[family-name:var(--font-mansalva)] text-xl text-olive">The Wedding Of</p>
-          <h1 className="font-[family-name:var(--font-mansalva)] text-6xl leading-tight tracking-tight text-cream">
+          <h1 className="font-[family-name:var(--font-just-me)] text-6xl leading-tight tracking-tight text-cream">
             Budi & Tsalsa
           </h1>
-          <Doodle type="line" className="w-32 h-4 text-soft-peach" />
+          <Doodle type="line" className="w-32 h-4 text-olive opacity-85" />
           <p className="font-[family-name:var(--font-mansalva)] text-lg text-soft-peach mt-1">Sekitar Agustus</p>
           
           <div className="mt-6 bg-soft-peach/10 p-4 rounded-2xl shadow-md border border-cream/10 w-full max-w-[280px]">
