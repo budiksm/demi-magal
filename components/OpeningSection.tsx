@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import Doodle from './Doodle';
-import Oval from './Oval';
+import Frame from '@/public/doodles/Oval-FIX.svg';
 
 export default function OpeningSection() {
   return (
@@ -24,10 +24,10 @@ export default function OpeningSection() {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="relative z-10 flex items-center justify-center my-16 w-[280px] sm:w-[320px] md:w-[420px]"
+        className="relative z-10 flex items-center justify-center my-16 w-[340px] sm:w-[380px] md:w-[480px] lg:w-[480px] xl:w-[520px]"
       >
-        {/* Oval outline */}
-        <Oval className="w-full h-auto text-[#FFF8F0] opacity-90 drop-shadow-sm" />
+        {/* Frame outline */}
+        <Frame className="w-full h-auto drop-shadow-sm" />
         
         {/* Text Content inside Oval */}
         <motion.div
@@ -44,7 +44,7 @@ export default function OpeningSection() {
               }
             }
           }}
-          className="absolute flex flex-col items-center justify-center gap-4 md:gap-5 px-8 py-12 md:px-10 md:py-16 bg-[rgba(255,248,240,0.88)] backdrop-blur-[2px] rounded-[50%] w-[86%] h-[86%] text-center shadow-xl"
+          className="absolute flex flex-col items-center justify-center gap-4 md:gap-5 px-8 py-12 md:px-10 md:py-16 bg-[#FFF8F0]/95 backdrop-blur-[2px] rounded-[50%] w-[84%] h-[84%] text-center shadow-xl"
         >
           <motion.p 
             variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}

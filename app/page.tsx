@@ -40,7 +40,7 @@ export default function Home() {
           >
             <div className="flex flex-row min-h-screen relative z-10 bg-cream">
               {/* LEFT SIDE: Sticky Image (Desktop Only) */}
-              <div className="hidden lg:flex w-[65%] sticky top-0 h-screen self-start flex-col items-center justify-center relative">
+              <div className="hidden lg:flex w-[50%] sticky top-0 h-screen self-start flex-col items-center justify-center relative">
                 <Image
                   src="https://picsum.photos/seed/wedding-main/1200/1600"
                   alt="Romeo and Juliet"
@@ -51,7 +51,7 @@ export default function Home() {
               </div>
 
               {/* RIGHT SIDE: Scrollable Content */}
-              <div className="w-full lg:w-[35%] flex flex-col items-center bg-cream">
+              <div className="w-full lg:w-[50%] flex flex-col items-center bg-cream">
                 <div className="w-full">
                   <OpeningSection />
                 </div>
