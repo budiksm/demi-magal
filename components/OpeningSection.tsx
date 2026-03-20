@@ -4,7 +4,10 @@ import Frame from '@/public/doodles/Oval-FIX.svg';
 
 export default function OpeningSection() {
   return (
-    <section className="py-24 px-6 text-center relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[url('/backgrounds/bg-floral.webp')] bg-cover bg-center">
+    <section 
+      className="py-24 px-6 text-center relative min-h-screen flex flex-col items-center justify-center bg-cover bg-center"
+      style={{ backgroundImage: "url('/backgrounds/bg-floral.webp')" }}
+    >
       {/* Burgundy Overlay */}
       <div className="absolute inset-0 bg-[rgba(122,34,34,0.55)]" />
 
@@ -24,10 +27,15 @@ export default function OpeningSection() {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="relative z-10 flex items-center justify-center my-16 w-[340px] sm:w-[380px] md:w-[480px] lg:w-[480px] xl:w-[520px]"
+        className="relative z-10 flex items-center justify-center my-16 w-[320px] md:w-[500px]"
       >
+        {/* Inner Background Layer (Behind SVG) */}
+        <div className="absolute inset-0 flex items-center justify-center -z-10">
+          <div className="w-[82%] h-[84%] rounded-[50%] bg-[#FDF6F0] shadow-xl" />
+        </div>
+
         {/* Frame outline */}
-        <Frame className="w-full h-auto drop-shadow-sm" />
+        <Frame className="w-full h-auto block drop-shadow-sm" preserveAspectRatio="xMidYMid meet" />
         
         {/* Text Content inside Oval */}
         <motion.div
@@ -44,7 +52,7 @@ export default function OpeningSection() {
               }
             }
           }}
-          className="absolute flex flex-col items-center justify-center gap-4 md:gap-5 px-8 py-12 md:px-10 md:py-16 bg-[#FFF8F0]/95 backdrop-blur-[2px] rounded-[50%] w-[84%] h-[84%] text-center shadow-xl"
+          className="absolute inset-0 flex flex-col items-center justify-center gap-4 md:gap-5 px-8 py-12 md:px-10 md:py-16 text-center z-10"
         >
           <motion.p 
             variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
