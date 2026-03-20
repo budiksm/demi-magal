@@ -14,9 +14,9 @@ export default function CoverSection({ onOpen }: { onOpen: () => void }) {
       
       <div className="z-10 flex flex-col items-center max-w-md mx-auto w-full relative">
         
-        {/* 2. MAIN LAYOUT: Polaroid Photobox */}
-        <div className="relative w-56 h-64 mb-6 -rotate-2 animate-float bg-cream p-4 pb-16 shadow-2xl rounded-sm border border-cream/20">
-           <div className="relative w-full h-full bg-gray-200 overflow-hidden shadow-inner">
+        {/* 2. MAIN LAYOUT: Framed Photo */}
+        <div className="relative w-56 h-64 mb-4 bg-cream p-2 shadow-md rounded-lg border border-cream/60 [box-shadow:inset_0_0_4px_rgba(0,0,0,0.1)]">
+           <div className="relative w-full h-full bg-gray-200 overflow-hidden rounded-md">
              <Image
                 src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWh3a3NxOTRjeXd1aXJ4Zmw2aHpwcWkxNmlkaWhpZzk0NXF2MjNmcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Kb4WlwEM9PiB8I7Yhc/giphy.gif"
                 alt="Couple Photobox"
@@ -51,14 +51,13 @@ export default function CoverSection({ onOpen }: { onOpen: () => void }) {
 
         {/* 3. TEXT: Below image */}
         <div className="flex flex-col items-center gap-1">
-          <p className="font-[family-name:var(--font-mansalva)] text-xl text-olive">The Wedding Of</p>
           <h1 className="font-[family-name:var(--font-just-me)] text-6xl leading-tight tracking-tight text-cream">
             Budi & Tsalsa
           </h1>
           <Doodle type="line" className="w-32 h-4 text-olive opacity-85" />
           <p className="font-[family-name:var(--font-mansalva)] text-lg text-soft-peach mt-1">Sekitar Agustus</p>
           
-          <div className="mt-6 bg-soft-peach/10 p-4 rounded-2xl shadow-md border border-cream/10 w-full max-w-[280px]">
+          <div className="mt-4 bg-soft-peach/10 p-4 rounded-2xl shadow-md border border-cream/10 w-full max-w-[280px]">
              <p className="text-xs font-sans uppercase tracking-widest text-cream/60">Dear,</p>
              <p className="font-[family-name:var(--font-mansalva)] text-2xl text-cream">Guest Name</p>
           </div>
