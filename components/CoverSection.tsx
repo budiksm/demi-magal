@@ -25,15 +25,17 @@ export default function CoverSection({ onOpen }: { onOpen: () => void }) {
                 referrerPolicy="no-referrer"
                 unoptimized
              />
+             <div className="absolute inset-0 bg-burgundy/10 z-10" />
            </div>
            
            {/* Decorative text around photo */}
-           <p className="absolute -left-20 top-1/2 -rotate-10 text-olive font-[family-name:var(--font-beth-ellen)] text-2xl opacity-90 leading-tight">so<br/>real</p>
-           <p className="absolute -right-20 top-1/2 rotate-8 text-cream font-[family-name:var(--font-beth-ellen)] text-2xl opacity-90 leading-tight">getting<br/>married</p>
+           <p className="absolute -left-16 top-1/2 -rotate-10 text-olive font-[family-name:var(--font-beth-ellen)] text-2xl opacity-90 leading-tight">so<br/>real</p>
+           <p className="absolute -right-16 top-1/2 rotate-8 text-white font-[family-name:var(--font-beth-ellen)] text-2xl opacity-90 leading-tight">getting<br/>married</p>
 
            {/* Small doodle ornaments */}
            <Doodle type="star" className="absolute -top-6 -right-6 w-4 h-4 text-cream/60" />
            <Doodle type="flower" className="absolute -bottom-4 -left-4 w-4 h-4 text-cream/60" />
+           <Doodle type="heart" className="absolute -bottom-4 left-2 w-4 h-4 text-cream/60" />
            <Doodle type="star" className="absolute top-4 -left-6 w-5 h-5 text-soft-peach/60" />
            
            {/* MAIN ACCENTS: Asymmetrical florals */}
