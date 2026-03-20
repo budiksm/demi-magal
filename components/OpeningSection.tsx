@@ -1,11 +1,11 @@
 import { motion } from 'motion/react';
-import Image from 'next/image';
 import Doodle from './Doodle';
+import OvalFrame from '@/public/decorations/Oval-FIX.svg';
 
 export default function OpeningSection() {
   return (
     <section 
-      className="py-24 px-6 text-center relative min-h-screen flex flex-col items-center justify-center bg-cover bg-center"
+      className="py-24 px-6 text-center relative min-h-screen flex flex-col items-center justify-center bg-cover bg-center overflow-hidden"
       style={{ 
         backgroundImage: "url('/backgrounds/bg-floral.webp')",
         backgroundSize: "cover",
@@ -30,22 +30,21 @@ export default function OpeningSection() {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="relative z-10 flex items-center justify-center my-16 w-[320px] md:w-[500px]"
+        className="relative z-10 flex items-center justify-center my-16 w-[75%] max-w-[440px]"
       >
         {/* 1. Inner cream shape (Background for text) */}
-        <div className="absolute inset-0 flex items-center justify-center z-0">
-          <div className="w-[80%] h-[80%] rounded-full bg-[#FDF6F0]" />
+        <div className="absolute inset-0 flex items-center justify-center z-0 animate-float-subtle">
+          <div className="oval-fill w-[85%] h-[90%]" />
         </div>
 
         {/* 2. Frame outline */}
-        <Image
-          src="/doodles/Oval-FIX.svg"
-          alt="Frame"
-          width={736}
-          height={950}
-          className="relative z-10 w-full h-auto drop-shadow-sm opacity-80"
-          priority
-        />
+        <div className="relative z-10 w-full h-auto flex items-center justify-center animate-float-subtle" style={{ animationDelay: '0.2s' }}>
+          <OvalFrame 
+            className="oval-frame w-full h-auto block drop-shadow-sm opacity-80" 
+            preserveAspectRatio="xMidYMid meet" 
+            viewBox="0 0 736 950"
+          />
+        </div>
         
         {/* 3. Text Content inside Oval */}
         <motion.div
@@ -62,26 +61,27 @@ export default function OpeningSection() {
               }
             }
           }}
-          className="absolute inset-0 flex flex-col items-center justify-center gap-4 md:gap-5 px-8 py-12 md:px-10 md:py-16 text-center z-20"
+          className="absolute inset-0 flex flex-col items-center justify-center text-center z-20 p-8"
         >
           <motion.p 
             variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-            className="font-[family-name:var(--font-mansalva)] text-lg md:text-xl text-[#5A5A40]"
+            className="font-[family-name:var(--font-beth-ellen)] text-sm md:text-base text-[#5A5A40] mb-2"
           >
             The Wedding of
           </motion.p>
-          <motion.h2 
+          
+          <motion.div 
             variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-            className="font-[family-name:var(--font-just-me)] text-5xl sm:text-6xl md:text-7xl text-[#7A2222] leading-tight max-w-[90%]"
+            className="names"
           >
-            Budi & Tsalsa
-          </motion.h2>
-          <motion.div variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
-            <Doodle type="line" className="w-16 md:w-20 h-2 md:h-3 text-[#5A5A40] opacity-60" />
+            <span className="name top">Budi</span>
+            <span className="and">&</span>
+            <span className="name bottom">Tsalsa</span>
           </motion.div>
+
           <motion.p 
             variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-            className="font-[family-name:var(--font-mansalva)] text-lg md:text-xl text-[#5A5A40]"
+            className="font-[family-name:var(--font-beth-ellen)] text-sm md:text-base text-[#5A5A40] mt-2"
           >
             August 2026
           </motion.p>
