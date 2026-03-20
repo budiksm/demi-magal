@@ -30,39 +30,36 @@ export default function OpeningSection() {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="relative z-10 flex items-center justify-center my-16 w-[75%] max-w-[440px]"
+        className="relative z-10 flex items-center justify-center my-16 w-[85%] max-w-[440px]"
       >
-        {/* 1. Inner cream shape (Background for text) */}
-        <div className="absolute inset-0 flex items-center justify-center z-0 animate-float-subtle">
-          <div className="oval-fill w-[85%] h-[90%]" />
-        </div>
+        <div className="oval-container animate-float-subtle">
+          {/* 1. Inner cream shape (Background for text) */}
+          <div className="oval-fill" />
 
-        {/* 2. Frame outline */}
-        <div className="relative z-10 w-full h-auto flex items-center justify-center animate-float-subtle" style={{ animationDelay: '0.2s' }}>
+          {/* 2. Frame outline */}
           <OvalFrame 
-            className="oval-frame w-full h-auto block drop-shadow-sm opacity-80" 
+            className="oval-frame drop-shadow-sm opacity-80" 
             preserveAspectRatio="xMidYMid meet" 
             viewBox="0 0 736 950"
           />
-        </div>
-        
-        {/* 3. Text Content inside Oval */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                delayChildren: 0.3,
-                staggerChildren: 0.15
+          
+          {/* 3. Text Content inside Oval */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  delayChildren: 0.3,
+                  staggerChildren: 0.15
+                }
               }
-            }
-          }}
-          className="absolute inset-0 flex flex-col items-center justify-center text-center z-20 p-8"
-        >
+            }}
+            className="absolute inset-0 flex flex-col items-center justify-center text-center z-20 p-8"
+          >
           <motion.p 
             variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
             className="font-[family-name:var(--font-beth-ellen)] text-sm md:text-base text-[#5A5A40] mb-2"
@@ -86,6 +83,7 @@ export default function OpeningSection() {
             August 2026
           </motion.p>
         </motion.div>
+        </div>
       </motion.div>
     </section>
   );

@@ -11,16 +11,42 @@
 }
 
 /* Oval Frame & Fill Styles */
+.oval-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 736 / 950;
+}
+
+.oval-frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: auto;
+  z-index: 10;
+}
+
 .oval-frame path {
   stroke: #6b7b5b; /* olive */
+  stroke-width: 2.5;
   fill: none;
 }
 
 .oval-fill {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 82%;
   background-color: rgba(255, 248, 240, 0.92);
-  border-radius: 50% / 60%;
+  border-radius: 48% 52% 55% 45% / 55% 50% 50% 45%;
   backdrop-filter: blur(4px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  box-shadow: 
+    0 20px 40px rgba(0,0,0,0.15), 
+    inset 0 0 20px rgba(255,255,255,0.3);
+  z-index: 0;
 }
 
 .names {
@@ -28,7 +54,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
   margin: 1.5rem 0;
 }
 
@@ -47,22 +72,20 @@
 
 .name.top {
   transform: rotate(-2deg);
+  margin-bottom: 8px;
 }
 
 .name.bottom {
   transform: rotate(2deg);
+  margin-top: 8px;
 }
 
 .and {
   font-family: var(--font-beth-ellen);
   color: #5A5A40;
-  font-size: 2rem;
-}
-
-@media (min-width: 768px) {
-  .and {
-    font-size: 2.5rem;
-  }
+  font-size: 26px;
+  font-weight: bold;
+  opacity: 0.9;
 }
 
 @keyframes float-subtle {
