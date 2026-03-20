@@ -5,6 +5,7 @@
   --color-burgundy: #5C1A1B;
   --color-olive: #737A59;
   --color-peach: #F2D5C4;
+  --color-muted-foreground: #727756;
   --font-serif: var(--font-caveat);
   --font-sans: var(--font-inter);
 }

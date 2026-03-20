@@ -29,13 +29,8 @@ export default function OpeningSection() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="relative z-10 flex items-center justify-center my-16 w-[320px] md:w-[500px]"
       >
-        {/* Inner Background Layer (Behind SVG) */}
-        <div className="absolute inset-0 flex items-center justify-center -z-10">
-          <div className="w-[82%] h-[84%] rounded-[50%] bg-[#FDF6F0] shadow-xl" />
-        </div>
-
         {/* Frame outline */}
-        <Frame className="w-full h-auto block drop-shadow-sm" preserveAspectRatio="xMidYMid meet" />
+        <Frame className="w-full h-auto block drop-shadow-sm text-[#727756]" preserveAspectRatio="xMidYMid meet" />
         
         {/* Text Content inside Oval */}
         <motion.div
