@@ -38,9 +38,9 @@ export default function Home() {
             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
             className="w-full"
           >
-            <div className="flex flex-col lg:flex-row min-h-screen relative z-10 bg-cream">
-              {/* LEFT SIDE: Sticky Image (Desktop) / Stacked (Mobile) */}
-              <div className="w-full h-[60vh] lg:w-[65%] lg:sticky lg:top-0 lg:h-screen lg:self-start flex flex-col items-center justify-center relative">
+            <div className="flex flex-row min-h-screen relative z-10 bg-cream">
+              {/* LEFT SIDE: Sticky Image (Desktop Only) */}
+              <div className="hidden lg:flex w-[65%] sticky top-0 h-screen self-start flex-col items-center justify-center relative">
                 <Image
                   src="https://picsum.photos/seed/wedding-main/1200/1600"
                   alt="Romeo and Juliet"
@@ -48,15 +48,10 @@ export default function Home() {
                   className="object-cover"
                   referrerPolicy="no-referrer"
                 />
-                
-                <div className="mt-8 text-center lg:hidden relative z-10 bg-cream/80 p-6 rounded-2xl backdrop-blur-sm">
-                  <h2 className="font-serif text-5xl text-burgundy">Romeo & Juliet</h2>
-                  <p className="text-olive mt-2 font-serif text-xl">24 . 10 . 2026</p>
-                </div>
               </div>
 
               {/* RIGHT SIDE: Scrollable Content */}
-              <div className="lg:w-[35%] flex flex-col items-center w-full bg-cream">
+              <div className="w-full lg:w-[35%] flex flex-col items-center bg-cream">
                 <div className="w-full max-w-[520px] mx-auto px-6 lg:px-10 py-12">
                   <OpeningSection />
                   <CoupleProfile />
