@@ -88,8 +88,7 @@ function PersonCard({ name, nameHighlight, parentLabel, father, mother, instagra
         className={`flex flex-col ${reverse ? 'items-end text-right' : 'items-start text-left'}`}
       >
         {[
-          <p key="name" className="font-[family-name:var(--font-midnight-study)] text-sm text-burgundy/60 leading-tight tracking-wide">{name}</p>,
-          <h3 key="highlight" className="font-[family-name:var(--font-midnight-study)] text-5xl text-burgundy leading-tight">{nameHighlight}</h3>,
+          <h3 key="highlight" className="font-[family-name:var(--font-midnight-study)] text-4xl text-burgundy leading-tight">{nameHighlight}</h3>,
           <div key="parents" className="mt-3">
             <p className="font-sans text-[10px] text-burgundy/45 uppercase tracking-widest mb-1">{parentLabel}</p>
             <p className="font-[family-name:var(--font-mansalva)] text-sm text-burgundy/80 leading-snug">{father}</p>
@@ -113,7 +112,7 @@ export default function CoupleProfile() {
       <Doodle type="tulip" className="absolute bottom-4 left-2 w-16 h-16 text-peach/15 pointer-events-none" />
 
       <div className="flex flex-col gap-16">
-        <PersonCard name="K. Lael" nameHighlight="Tsalsa" parentLabel="Putri dari"
+        <PersonCard name="" nameHighlight="Tsalsa K. Lael" parentLabel="Putri dari"
           father="Bpk. Sopyan Saori" mother="Ibu Neneng Siswati" instagram="@tsalsakl"
           photoSrc="/photos/tsalsa.jpeg" photoAlt="Tsalsa K. Lael" reverse={false} delay={0} />
 
@@ -130,7 +129,7 @@ export default function CoupleProfile() {
           <Doodle type="line" className="w-12 h-3 text-olive/40 scale-x-[-1]" />
         </motion.div>
 
-        <PersonCard name="Budi" nameHighlight="Kusuma" parentLabel="Putra dari"
+        <PersonCard name="" nameHighlight="Budi Kusuma" parentLabel="Putra dari"
           father="Bpk. Sunadi" mother="Ibu Sartini" instagram="@efekkiranti"
           photoSrc="/photos/budi.jpeg" photoAlt="Budi Kusuma" reverse={true} delay={0.1} />
       </div>

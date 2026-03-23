@@ -73,11 +73,38 @@ export default function QuranSection() {
           </motion.div>
         ))}
 
-        {/* SVG scalloped frame */}
-        <svg viewBox="0 0 420 580" xmlns="http://www.w3.org/2000/svg"
-          className="absolute inset-0 w-full h-full pointer-events-none z-10">
-          <path d="M 30 20 Q 47 5,64 20 Q 81 5,98 20 Q 115 5,132 20 Q 149 5,166 20 Q 183 5,200 20 Q 217 5,234 20 Q 251 5,268 20 Q 285 5,302 20 Q 319 5,336 20 Q 353 5,370 20 Q 387 8,400 20 Q 412 30,412 47 Q 425 64,412 81 Q 425 98,412 115 Q 425 132,412 149 Q 425 166,412 183 Q 425 200,412 217 Q 425 234,412 251 Q 425 268,412 285 Q 425 302,412 319 Q 425 336,412 353 Q 425 370,412 387 Q 425 404,412 421 Q 425 438,412 455 Q 425 472,412 489 Q 412 510,395 522 Q 378 535,361 522 Q 344 535,327 522 Q 310 535,293 522 Q 276 535,259 522 Q 242 535,225 522 Q 208 535,191 522 Q 174 535,157 522 Q 140 535,123 522 Q 106 535,89 522 Q 72 535,55 522 Q 38 535,22 522 Q 8 510,8 493 Q -5 476,8 459 Q -5 442,8 425 Q -5 408,8 391 Q -5 374,8 357 Q -5 340,8 323 Q -5 306,8 289 Q -5 272,8 255 Q -5 238,8 221 Q -5 204,8 187 Q -5 170,8 153 Q -5 136,8 119 Q -5 102,8 85 Q -5 68,8 51 Q 12 8,30 20 Z"
-            fill="rgba(250, 248, 245, 0.97)" stroke="#737A59" strokeWidth="1.5" />
+        {/* CSS scalloped border — fluid, ikuti tinggi konten */}
+        <div className="absolute inset-0 z-10 pointer-events-none rounded-[2rem]"
+          style={{
+            background: 'rgba(250, 248, 245, 0.97)',
+            border: '2px solid #737A59',
+            borderRadius: '2rem',
+            maskImage: 'none',
+          }}
+        />
+        {/* Scalloped top edge */}
+        <svg className="absolute top-0 left-0 w-full z-10 pointer-events-none" style={{ height: '20px', marginTop: '-1px' }}
+          viewBox="0 0 420 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 20 Q15 5,30 20 Q45 5,60 20 Q75 5,90 20 Q105 5,120 20 Q135 5,150 20 Q165 5,180 20 Q195 5,210 20 Q225 5,240 20 Q255 5,270 20 Q285 5,300 20 Q315 5,330 20 Q345 5,360 20 Q375 5,390 20 Q405 5,420 20"
+            fill="rgba(250,248,245,0.97)" stroke="#737A59" strokeWidth="1.5" />
+        </svg>
+        {/* Scalloped bottom edge */}
+        <svg className="absolute bottom-0 left-0 w-full z-10 pointer-events-none" style={{ height: '20px', marginBottom: '-1px' }}
+          viewBox="0 0 420 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0 Q15 15,30 0 Q45 15,60 0 Q75 15,90 0 Q105 15,120 0 Q135 15,150 0 Q165 15,180 0 Q195 15,210 0 Q225 15,240 0 Q255 15,270 0 Q285 15,300 0 Q315 15,330 0 Q345 15,360 0 Q375 15,390 0 Q405 15,420 0"
+            fill="rgba(250,248,245,0.97)" stroke="#737A59" strokeWidth="1.5" />
+        </svg>
+        {/* Scalloped left edge */}
+        <svg className="absolute top-0 left-0 h-full z-10 pointer-events-none" style={{ width: '20px', marginLeft: '-1px' }}
+          viewBox="0 0 20 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 0 Q5 15,20 30 Q5 45,20 60 Q5 75,20 90 Q5 105,20 120 Q5 135,20 150 Q5 165,20 180 Q5 195,20 210 Q5 225,20 240 Q5 255,20 270 Q5 285,20 300 Q5 315,20 330 Q5 345,20 360 Q5 375,20 390 Q5 405,20 420 Q5 435,20 450 Q5 465,20 480 Q5 495,20 510 Q5 525,20 540 Q5 555,20 570 Q5 585,20 600"
+            fill="rgba(250,248,245,0.97)" stroke="#737A59" strokeWidth="1.5" />
+        </svg>
+        {/* Scalloped right edge */}
+        <svg className="absolute top-0 right-0 h-full z-10 pointer-events-none" style={{ width: '20px', marginRight: '-1px' }}
+          viewBox="0 0 20 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0 Q15 15,0 30 Q15 45,0 60 Q15 75,0 90 Q15 105,0 120 Q15 135,0 150 Q15 165,0 180 Q15 195,0 210 Q15 225,0 240 Q15 255,0 270 Q15 285,0 300 Q15 315,0 330 Q15 345,0 360 Q15 375,0 390 Q15 405,0 420 Q15 435,0 450 Q15 465,0 480 Q15 495,0 510 Q15 525,0 540 Q15 555,0 570 Q15 585,0 600"
+            fill="rgba(250,248,245,0.97)" stroke="#737A59" strokeWidth="1.5" />
         </svg>
 
         {/* Konten */}
