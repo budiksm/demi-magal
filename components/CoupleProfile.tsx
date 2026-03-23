@@ -88,8 +88,8 @@ function PersonCard({ name, nameHighlight, parentLabel, father, mother, instagra
         className={`flex flex-col ${reverse ? 'items-end text-right' : 'items-start text-left'}`}
       >
         {[
-          <p key="name" className="font-[family-name:var(--font-midnight-study)] text-xl text-burgundy/75 leading-tight">{name}</p>,
-          <h3 key="highlight" className="font-[family-name:var(--font-midnight-study)] text-4xl text-burgundy leading-tight">{nameHighlight}</h3>,
+          <p key="name" className="font-[family-name:var(--font-midnight-study)] text-sm text-burgundy/60 leading-tight tracking-wide">{name}</p>,
+          <h3 key="highlight" className="font-[family-name:var(--font-midnight-study)] text-5xl text-burgundy leading-tight">{nameHighlight}</h3>,
           <div key="parents" className="mt-3">
             <p className="font-sans text-[10px] text-burgundy/45 uppercase tracking-widest mb-1">{parentLabel}</p>
             <p className="font-[family-name:var(--font-mansalva)] text-sm text-burgundy/80 leading-snug">{father}</p>
