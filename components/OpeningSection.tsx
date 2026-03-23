@@ -71,9 +71,9 @@ export default function OpeningSection() {
             variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
             className="names"
           >
-            <span className="name top">Budi</span>
+            <span className="name top">Tsalsa</span>
             <span className="and">&</span>
-            <span className="name bottom">Tsalsa</span>
+            <span className="name bottom">Budi</span>
           </motion.div>
 
           <motion.p 

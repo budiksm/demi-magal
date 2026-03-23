@@ -62,7 +62,7 @@ function OvalPhoto({ src, alt }: { src: string; alt: string }) {
         alt=""
         aria-hidden="true"
         className="absolute inset-0 w-full h-full z-20 pointer-events-none"
-        style={{ objectFit: 'fill' }}
+        style={{ objectFit: 'fill', border: 'none', outline: 'none', boxShadow: 'none', display: 'block' }}
       />
     </div>
   );
