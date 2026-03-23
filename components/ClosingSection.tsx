@@ -1,75 +1,7 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import Doodle from './Doodle';
-
-function MusicPlayer() {
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const [playing, setPlaying] = useState(false);
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    audio.volume = 0.5;
-    const onReady = () => setReady(true);
-    audio.addEventListener('canplaythrough', onReady);
-    return () => audio.removeEventListener('canplaythrough', onReady);
-  }, []);
-
-  const toggle = () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    if (playing) {
-      audio.pause();
-      setPlaying(false);
-    } else {
-      audio.play();
-      setPlaying(true);
-    }
-  };
-
-  return (
-    <div className="flex flex-col items-center gap-3 mb-10">
-      <audio ref={audioRef} src="/audio/selfless.mp3" loop preload="auto" />
-
-      {/* Tombol play */}
-      <button
-        onClick={toggle}
-        className="group relative flex items-center justify-center w-14 h-14 rounded-full border-2 border-burgundy/30 text-burgundy/60 hover:border-burgundy hover:text-burgundy transition-all duration-300"
-      >
-        {playing ? (
-          /* Pause icon */
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <rect x="6" y="4" width="4" height="16" rx="1"/>
-            <rect x="14" y="4" width="4" height="16" rx="1"/>
-          </svg>
-        ) : (
-          /* Play icon */
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-        )}
-
-        {/* Animasi gelombang kalau playing */}
-        {playing && (
-          <span className="absolute inset-0 rounded-full border-2 border-burgundy/20 animate-ping" />
-        )}
-      </button>
-
-      {/* Info lagu */}
-      <div className="text-center">
-        <p className="font-[family-name:var(--font-beth-ellen)] text-xs text-olive/60 uppercase tracking-widest">
-          {playing ? '♪ sedang diputar' : 'putar lagu'}
-        </p>
-        <p className="font-[family-name:var(--font-mansalva)] text-sm text-burgundy/50 mt-0.5">
-          Selfless — The Strokes
-        </p>
-      </div>
-    </div>
-  );
-}
 
 export default function ClosingSection() {
   return (
@@ -86,9 +18,6 @@ export default function ClosingSection() {
 
       <div className="max-w-md mx-auto relative z-10">
 
-        {/* Music player */}
-        <MusicPlayer />
-
         {/* Divider */}
         <div className="flex items-center gap-3 mb-10">
           <Doodle type="line" className="flex-1 h-3 text-olive/30" />
@@ -103,7 +32,7 @@ export default function ClosingSection() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
-          <p className="font-[family-name:var(--font-beth-ellen)] text-lg leading-relaxed text-burgundy/80 mb-8">
+          <p className="font-[family-name:var(--font-smoky)] text-lg leading-relaxed text-burgundy/80 mb-8">
             &quot;Doa dan kehadiran kalian adalah hadiah terindah yang bisa kami terima. Sampai jumpa di hari yang paling kami tunggu-tunggu.&quot;
           </p>
 
@@ -111,13 +40,13 @@ export default function ClosingSection() {
             Dengan kasih,
           </p>
 
-          <h2 className="font-[family-name:var(--font-just-me)] text-5xl text-burgundy relative inline-block">
+          <h2 className="font-[family-name:var(--font-tnanti)] text-5xl text-burgundy relative inline-block">
             Tsalsa & Budi
             <Doodle type="line" className="absolute -bottom-1 left-0 w-full h-3 text-peach/50" />
           </h2>
         </motion.div>
 
-        {/* Heart kecil di bawah */}
+        {/* Heart */}
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}

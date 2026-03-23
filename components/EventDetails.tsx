@@ -71,7 +71,7 @@ export default function EventDetails() {
 
       {/* Save The Date + Countdown */}
       <div className="text-center mb-10">
-        <p className="font-[family-name:var(--font-valentine)] text-xs uppercase tracking-[0.3em] text-olive/60 mb-1">save the date</p>
+        <p className="font-[family-name:var(--font-smoky)] text-2xl text-olive/70 mb-1">Save the Date</p>
         <h2 className="font-[family-name:var(--font-midnight-study)] text-4xl text-burgundy mb-6">The Wedding Day</h2>
         <div className="flex justify-center gap-5 bg-burgundy/5 rounded-2xl py-5 px-4 mx-2">
           <CountUnit value={days} label="Days" />

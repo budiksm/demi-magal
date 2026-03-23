@@ -140,7 +140,7 @@ export default function QuranSection() {
             {/* Tanda kutip pembuka */}
             <motion.p
               variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-              className="font-[family-name:var(--font-valentine)] text-5xl text-olive/50 leading-none mb-1 -mt-2"
+              className="font-[family-name:var(--font-smoky)] text-5xl text-olive/50 leading-none mb-1 -mt-2"
             >
               "
             </motion.p>
@@ -163,7 +163,7 @@ export default function QuranSection() {
               <motion.p
                 key={i}
                 variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4 } } }}
-                className="font-[family-name:var(--font-valentine)] text-base text-burgundy leading-relaxed"
+                className="font-[family-name:var(--font-smoky)] text-base text-burgundy leading-relaxed"
               >
                 {line}
               </motion.p>
@@ -172,7 +172,7 @@ export default function QuranSection() {
             {/* Sumber */}
             <motion.p
               variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-              className="font-[family-name:var(--font-valentine)] text-sm text-olive mt-4"
+              className="font-[family-name:var(--font-smoky)] text-sm text-olive mt-4"
             >
               (QS. Ar-Rum : 21)
             </motion.p>

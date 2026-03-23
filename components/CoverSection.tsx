@@ -1,10 +1,23 @@
+import { useRef } from 'react';
 import { MailOpen } from 'lucide-react';
 import Image from 'next/image';
 import Doodle from './Doodle';
 
 export default function CoverSection({ onOpen }: { onOpen: () => void }) {
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const handleOpen = () => {
+    const audio = audioRef.current;
+    if (audio) {
+      audio.volume = 0.4;
+      audio.loop = true;
+      audio.play().catch(() => {});
+    }
+    onOpen();
+  };
   return (
     <section className="relative flex flex-col items-center justify-center min-h-[100dvh] px-6 py-6 text-center overflow-hidden bg-burgundy text-cream">
+      <audio ref={audioRef} src="/audio/selfless.mp3" preload="auto" />
       
       {/* 1. BACKGROUND PATTERN: Scattered florals */}
       <Doodle type="baby-breath" className="absolute top-10 left-10 w-16 h-16 text-cream/20 animate-pulse-soft pointer-events-none" />
@@ -65,7 +78,7 @@ export default function CoverSection({ onOpen }: { onOpen: () => void }) {
 
         {/* 4. BUTTON: Playful style */}
         <button
-          onClick={onOpen}
+          onClick={handleOpen}
           className="mt-8 relative z-50 flex items-center gap-2 px-8 py-3 bg-cream text-burgundy rounded-full hover:bg-cream/90 transition-transform hover:scale-105 duration-300 font-[family-name:var(--font-midnight-study)] text-xl cursor-pointer shadow-lg active:scale-95 border-2 border-burgundy/20"
         >
           <MailOpen size={20} />

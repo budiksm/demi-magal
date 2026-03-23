@@ -62,7 +62,7 @@ export default function OpeningSection() {
           >
           <motion.p 
             variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-            className="font-[family-name:var(--font-valentine)] text-sm md:text-base text-[#5A5A40] mb-2"
+            className="font-[family-name:var(--font-smoky)] text-sm md:text-base text-[#5A5A40] mb-2"
           >
             The Wedding of
           </motion.p>
@@ -78,7 +78,7 @@ export default function OpeningSection() {
 
           <motion.p 
             variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-            className="font-[family-name:var(--font-valentine)] text-sm md:text-base text-[#5A5A40] mt-2"
+            className="font-[family-name:var(--font-smoky)] text-sm md:text-base text-[#5A5A40] mt-2"
           >
             August 2026
           </motion.p>
