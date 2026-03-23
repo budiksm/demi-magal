@@ -51,22 +51,22 @@ export default function CoverSection({ onOpen }: { onOpen: () => void }) {
 
         {/* 3. TEXT: Below image */}
         <div className="flex flex-col items-center gap-1">
-          <h1 className="font-[family-name:var(--font-just-me)] text-6xl leading-tight tracking-tight text-cream">
+          <h1 className="font-[family-name:var(--font-almond-milky)] text-6xl leading-tight tracking-tight text-cream">
             Tsalsa & Budi
           </h1>
           <Doodle type="line" className="w-32 h-4 text-olive opacity-85" />
-          <p className="font-[family-name:var(--font-mansalva)] text-lg text-soft-peach mt-1">Sekitar Agustus</p>
+          <p className="font-[family-name:var(--font-midnight-study)] text-lg text-soft-peach mt-1">Sekitar Agustus</p>
           
           <div className="mt-4 bg-soft-peach/10 p-4 rounded-2xl shadow-md border border-cream/10 w-full max-w-[280px]">
              <p className="text-xs font-sans uppercase tracking-widest text-cream/60">Dear,</p>
-             <p className="font-[family-name:var(--font-mansalva)] text-2xl text-cream">Guest Name</p>
+             <p className="font-[family-name:var(--font-midnight-study)] text-2xl text-cream">Guest Name</p>
           </div>
         </div>
 
         {/* 4. BUTTON: Playful style */}
         <button
           onClick={onOpen}
-          className="mt-8 relative z-50 flex items-center gap-2 px-8 py-3 bg-cream text-burgundy rounded-full hover:bg-cream/90 transition-transform hover:scale-105 duration-300 font-[family-name:var(--font-mansalva)] text-xl cursor-pointer shadow-lg active:scale-95 border-2 border-burgundy/20"
+          className="mt-8 relative z-50 flex items-center gap-2 px-8 py-3 bg-cream text-burgundy rounded-full hover:bg-cream/90 transition-transform hover:scale-105 duration-300 font-[family-name:var(--font-midnight-study)] text-xl cursor-pointer shadow-lg active:scale-95 border-2 border-burgundy/20"
         >
           <MailOpen size={20} />
           Open Invitation

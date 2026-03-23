@@ -7,8 +7,10 @@ import CoverSection from '@/components/CoverSection';
 import OpeningSection from '@/components/OpeningSection';
 import QuranSection from '@/components/QuranSection';
 import CoupleProfile from '@/components/CoupleProfile';
+import PhotoPlaceholder from '@/components/PhotoPlaceholder';
 import EventDetails from '@/components/EventDetails';
 import ClosingSection from '@/components/ClosingSection';
+import SectionDivider from '@/components/SectionDivider';
 
 export default function Home() {
   const [isOpened, setIsOpened] = useState(false);
@@ -35,6 +37,7 @@ export default function Home() {
             className="w-full"
           >
             <div className="flex flex-row min-h-screen relative z-10 bg-cream">
+
               {/* LEFT SIDE: Sticky Image (Desktop Only) */}
               <div className="hidden lg:flex w-[50%] sticky top-0 h-screen self-start flex-col items-center justify-center relative">
                 <Image
@@ -48,16 +51,42 @@ export default function Home() {
 
               {/* RIGHT SIDE: Scrollable Content */}
               <div className="w-full lg:w-[50%] flex flex-col items-center bg-cream">
+
+                {/* Opening */}
                 <div className="w-full">
                   <OpeningSection />
                 </div>
+
+                <SectionDivider type="wave" />
+
+                {/* Quran */}
                 <div className="w-full">
                   <QuranSection />
                 </div>
-                <div className="w-full max-w-[520px] mx-auto px-6 lg:px-10 py-12">
+
+                <SectionDivider type="stars" />
+
+                {/* Konten utama */}
+                <div className="w-full max-w-[520px] mx-auto px-6 lg:px-10">
+
+                  {/* Couple Profile */}
                   <CoupleProfile />
+
+                  <SectionDivider type="floral" />
+
+                  {/* Photo Placeholder */}
+                  <PhotoPlaceholder />
+
+                  <SectionDivider type="leaves" />
+
+                  {/* Event Details */}
                   <EventDetails />
+
+                  <SectionDivider type="stars" />
+
+                  {/* Closing */}
                   <ClosingSection />
+
                 </div>
               </div>
             </div>
