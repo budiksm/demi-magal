@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import CoverSection from '@/components/CoverSection';
 import OpeningSection from '@/components/OpeningSection';
+import QuranSection from '@/components/QuranSection';
 import CoupleProfile from '@/components/CoupleProfile';
 import LoveStory from '@/components/LoveStory';
 import EventDetails from '@/components/EventDetails';
@@ -54,6 +55,9 @@ export default function Home() {
               <div className="w-full lg:w-[50%] flex flex-col items-center bg-cream">
                 <div className="w-full">
                   <OpeningSection />
+                </div>
+                <div className="w-full">
+                  <QuranSection />
                 </div>
                 <div className="w-full max-w-[520px] mx-auto px-6 lg:px-10 py-12">
                   <CoupleProfile />
