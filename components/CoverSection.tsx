@@ -51,7 +51,7 @@ export default function CoverSection({ onOpen }: { onOpen: () => void }) {
 
         {/* 3. TEXT: Below image */}
         <div className="flex flex-col items-center gap-1">
-          <h1 className="font-[family-name:var(--font-almond-milky)] text-6xl leading-tight tracking-tight text-cream">
+          <h1 className="font-[family-name:var(--font-tnanti)] text-6xl leading-tight tracking-tight text-cream">
             Tsalsa & Budi
           </h1>
           <Doodle type="line" className="w-32 h-4 text-olive opacity-85" />

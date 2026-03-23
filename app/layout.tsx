@@ -38,9 +38,9 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
-const almondMilky = localFont({
-  src: '../public/fonts/Almond_Milky.otf',
-  variable: '--font-almond-milky',
+const tNanti = localFont({
+  src: '../public/fonts/TNanti-Demo.otf',
+  variable: '--font-tnanti',
 });
 
 const midnightStudy = localFont({
@@ -59,7 +59,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${caveat.variable} ${justMe.variable} ${dancingScript.variable} ${mansalva.variable} ${bethEllen.variable} ${inter.variable} ${almondMilky.variable} ${midnightStudy.variable}`}>
+    <html lang="en" className={`${caveat.variable} ${justMe.variable} ${dancingScript.variable} ${mansalva.variable} ${bethEllen.variable} ${inter.variable} ${tNanti.variable} ${midnightStudy.variable}`}>
       <body className="font-sans antialiased selection:bg-peach selection:text-burgundy" suppressHydrationWarning>
         {children}
       </body>
