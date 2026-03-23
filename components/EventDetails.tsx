@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { motion } from 'motion/react';
 import Doodle from './Doodle';
 
 const WEDDING_DATE = new Date('2026-08-17T08:00:00');
@@ -60,80 +61,134 @@ export default function EventDetails() {
   return (
     <section className="relative py-16 px-4 overflow-hidden">
 
-      {/* Ornamen pojok */}
+      {/* Ornamen background luar frame */}
       <Doodle type="baby-breath" className="absolute top-4 left-0 w-20 h-20 text-olive/15 -rotate-12 pointer-events-none" />
       <Doodle type="baby-breath" className="absolute top-4 right-0 w-20 h-20 text-olive/15 rotate-12 pointer-events-none scale-x-[-1]" />
-      <Doodle type="star" className="absolute top-20 left-8 w-3 h-3 text-peach/40 pointer-events-none" />
-      <Doodle type="star" className="absolute top-24 right-8 w-2 h-2 text-olive/30 pointer-events-none" />
+      <Doodle type="tulip" className="absolute bottom-32 left-1 w-16 h-16 text-peach/15 rotate-6 pointer-events-none" />
+      <Doodle type="orchid" className="absolute bottom-32 right-1 w-16 h-16 text-olive/10 -rotate-6 pointer-events-none" />
+      <Doodle type="star" className="absolute top-16 left-6 w-3 h-3 text-peach/35 pointer-events-none" />
+      <Doodle type="star" className="absolute top-20 right-6 w-2 h-2 text-olive/25 pointer-events-none" />
 
-      {/* Border atas */}
-      <div className="flex items-center gap-2 mb-10">
-        <svg viewBox="0 0 160 20" className="flex-1 h-4 text-burgundy/40" fill="none">
-          <path d="M0 10 Q20 2,40 10 Q60 18,80 10 Q100 2,120 10 Q140 18,160 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-        </svg>
-        <Doodle type="heart" className="w-5 h-5 text-burgundy/50 shrink-0" />
-        <svg viewBox="0 0 160 20" className="flex-1 h-4 text-burgundy/40 scale-x-[-1]" fill="none">
-          <path d="M0 10 Q20 2,40 10 Q60 18,80 10 Q100 2,120 10 Q140 18,160 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-        </svg>
-      </div>
-
-      {/* Save The Date */}
-      <div className="text-center mb-8">
-        <p className="font-[family-name:var(--font-beth-ellen)] text-xs uppercase tracking-[0.3em] text-olive/60 mb-1">save the date</p>
-        <h2 className="font-[family-name:var(--font-caveat)] text-4xl font-semibold text-burgundy">The Wedding Day</h2>
-      </div>
-
-      {/* Countdown */}
-      <div className="flex justify-center gap-5 mb-10 bg-burgundy/5 rounded-2xl py-5 px-4 mx-2">
-        <CountUnit value={days} label="Days" />
-        <span className="font-[family-name:var(--font-caveat)] text-3xl text-olive/40 self-start mt-1">:</span>
-        <CountUnit value={hours} label="Hours" />
-        <span className="font-[family-name:var(--font-caveat)] text-3xl text-olive/40 self-start mt-1">:</span>
-        <CountUnit value={mins} label="Mins" />
-        <span className="font-[family-name:var(--font-caveat)] text-3xl text-olive/40 self-start mt-1">:</span>
-        <CountUnit value={secs} label="Secs" />
-      </div>
-
-      {/* Tanggal */}
+      {/* Save The Date + Countdown */}
       <div className="text-center mb-10">
-        <p className="font-[family-name:var(--font-beth-ellen)] text-sm text-olive/60 mb-1">Senin</p>
-        <p className="font-[family-name:var(--font-caveat)] text-6xl font-semibold text-burgundy leading-tight">17 Agustus</p>
-        <p className="font-[family-name:var(--font-caveat)] text-4xl text-burgundy/60 leading-tight">2026</p>
+        <p className="font-[family-name:var(--font-beth-ellen)] text-xs uppercase tracking-[0.3em] text-olive/60 mb-1">save the date</p>
+        <h2 className="font-[family-name:var(--font-caveat)] text-4xl font-semibold text-burgundy mb-6">The Wedding Day</h2>
+        <div className="flex justify-center gap-5 bg-burgundy/5 rounded-2xl py-5 px-4 mx-2">
+          <CountUnit value={days} label="Days" />
+          <span className="font-[family-name:var(--font-caveat)] text-3xl text-olive/40 self-start mt-1">:</span>
+          <CountUnit value={hours} label="Hours" />
+          <span className="font-[family-name:var(--font-caveat)] text-3xl text-olive/40 self-start mt-1">:</span>
+          <CountUnit value={mins} label="Mins" />
+          <span className="font-[family-name:var(--font-caveat)] text-3xl text-olive/40 self-start mt-1">:</span>
+          <CountUnit value={secs} label="Secs" />
+        </div>
       </div>
 
-      {/* Akad */}
-      <div className="text-center mb-3 px-4">
-        <Doodle type="star" className="inline-block w-3 h-3 text-olive/30 mb-2" />
-        <h3 className="font-[family-name:var(--font-caveat)] text-3xl font-semibold text-burgundy mb-1">Akad Nikah</h3>
-        <p className="font-[family-name:var(--font-mansalva)] text-sm text-burgundy/60 mb-1">08.00 – 10.00 WIB</p>
-        <p className="font-[family-name:var(--font-mansalva)] text-sm text-burgundy/50 leading-snug mb-4">
-          Swiss-Belhotel Karawang<br/>
-          Jl. Jenderal Ahmad Yani No.29, Karawang
-        </p>
-        <MapsButton />
-      </div>
+      {/* Frame utama acara */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-60px' }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        className="relative mx-2"
+      >
+        {/* Ornamen di sudut-sudut frame */}
+        <div className="absolute -top-7 -left-5 z-20 pointer-events-none">
+          <Doodle type="orchid" className="w-20 h-20 text-olive/55" />
+        </div>
+        <div className="absolute -top-7 -right-5 z-20 pointer-events-none scale-x-[-1]">
+          <Doodle type="orchid" className="w-20 h-20 text-olive/55" />
+        </div>
+        <div className="absolute -bottom-7 -left-5 z-20 pointer-events-none">
+          <Doodle type="calla-lily" className="w-20 h-20 text-burgundy/40" />
+        </div>
+        <div className="absolute -bottom-7 -right-5 z-20 pointer-events-none scale-x-[-1]">
+          <Doodle type="calla-lily" className="w-20 h-20 text-burgundy/40" />
+        </div>
+        <Doodle type="star" className="absolute top-4 right-6 w-3 h-3 text-olive/35 z-20 pointer-events-none" />
+        <Doodle type="star" className="absolute bottom-4 left-6 w-2 h-2 text-peach/45 z-20 pointer-events-none" />
+        <Doodle type="star" className="absolute top-1/2 left-3 w-2 h-2 text-olive/25 z-20 pointer-events-none" />
 
-      {/* Divider */}
-      <div className="flex items-center gap-3 my-8 px-6">
-        <Doodle type="line" className="flex-1 h-3 text-olive/30" />
-        <Doodle type="flower" className="w-6 h-6 text-peach/60 shrink-0" />
-        <Doodle type="line" className="flex-1 h-3 text-olive/30 scale-x-[-1]" />
-      </div>
+        {/* Frame border scalloped */}
+        <svg
+          viewBox="0 0 340 400"
+          xmlns="http://www.w3.org/2000/svg"
+          className="absolute inset-0 w-full h-full pointer-events-none z-10"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="
+              M 25 18 Q 38 5,51 18 Q 64 5,77 18 Q 90 5,103 18 Q 116 5,129 18
+              Q 142 5,155 18 Q 168 5,181 18 Q 194 5,207 18 Q 220 5,233 18
+              Q 246 5,259 18 Q 272 5,285 18 Q 298 5,311 18 Q 324 8,324 25
+              Q 337 38,324 51 Q 337 64,324 77 Q 337 90,324 103 Q 337 116,324 129
+              Q 337 142,324 155 Q 337 168,324 181 Q 337 194,324 207 Q 337 220,324 233
+              Q 337 246,324 259 Q 337 272,324 285 Q 337 298,324 311 Q 337 324,324 337
+              Q 324 355,311 362 Q 298 375,285 362 Q 272 375,259 362 Q 246 375,233 362
+              Q 220 375,207 362 Q 194 375,181 362 Q 168 375,155 362 Q 142 375,129 362
+              Q 116 375,103 362 Q 90 375,77 362 Q 64 375,51 362 Q 38 375,25 362
+              Q 8 355,8 337 Q -5 324,8 311 Q -5 298,8 285 Q -5 272,8 259
+              Q -5 246,8 233 Q -5 220,8 207 Q -5 194,8 181 Q -5 168,8 155
+              Q -5 142,8 129 Q -5 116,8 103 Q -5 90,8 77 Q -5 64,8 51
+              Q -5 38,8 25 Q 12 8,25 18 Z
+            "
+            fill="rgba(250, 248, 245, 0.96)"
+            stroke="#737A59"
+            strokeWidth="1.5"
+          />
+        </svg>
 
-      {/* Resepsi */}
-      <div className="text-center mb-6 px-4">
-        <Doodle type="star" className="inline-block w-3 h-3 text-peach/40 mb-2" />
-        <h3 className="font-[family-name:var(--font-caveat)] text-3xl font-semibold text-burgundy mb-1">Resepsi</h3>
-        <p className="font-[family-name:var(--font-mansalva)] text-sm text-burgundy/60 mb-1">11.00 – 13.00 WIB</p>
-        <p className="font-[family-name:var(--font-mansalva)] text-sm text-burgundy/50 leading-snug mb-4">
-          Swiss-Belhotel Karawang<br/>
-          Jl. Jenderal Ahmad Yani No.29, Karawang
-        </p>
-        <MapsButton />
-      </div>
+        {/* Konten dalam frame */}
+        <div className="relative z-20 px-10 py-12 text-center">
+
+          {/* Tanggal besar */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mb-8"
+          >
+            <p className="font-[family-name:var(--font-caveat)] text-2xl text-olive/70 leading-tight">Senin</p>
+            <p className="font-[family-name:var(--font-caveat)] text-7xl font-semibold text-burgundy leading-none">17</p>
+            <p className="font-[family-name:var(--font-caveat)] text-5xl font-semibold text-burgundy leading-tight">Agustus</p>
+            <p className="font-[family-name:var(--font-caveat)] text-3xl text-burgundy/55 leading-tight">2026</p>
+          </motion.div>
+
+          {/* Divider tipis */}
+          <div className="flex items-center gap-3 mb-8">
+            <div className="flex-1 h-px bg-olive/20" />
+            <Doodle type="flower" className="w-5 h-5 text-peach/60 shrink-0" />
+            <div className="flex-1 h-px bg-olive/20" />
+          </div>
+
+          {/* Akad Nikah & Syukuran */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.35 }}
+            className="mb-8"
+          >
+            <Doodle type="star" className="inline-block w-3 h-3 text-olive/30 mb-2" />
+            <h3 className="font-[family-name:var(--font-caveat)] text-3xl font-semibold text-burgundy mb-1">
+              Akad Nikah & Syukuran
+            </h3>
+            <p className="font-[family-name:var(--font-mansalva)] text-sm text-burgundy/60 mb-1">
+              08.00 – 13.00 WIB
+            </p>
+            <p className="font-[family-name:var(--font-mansalva)] text-sm text-burgundy/50 leading-snug mb-5">
+              Swiss-Belhotel Karawang<br />
+              Jl. Jenderal Ahmad Yani No.29, Karawang
+            </p>
+            <MapsButton />
+          </motion.div>
+
+        </div>
+      </motion.div>
 
       {/* Ilustrasi gedung */}
-      <div className="mt-10 opacity-20">
+      <div className="mt-14 opacity-20">
         <svg viewBox="0 0 400 120" className="w-full text-olive" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="140" y="40" width="120" height="75" />
           <rect x="160" y="55" width="25" height="35" />
@@ -154,17 +209,6 @@ export default function EventDetails() {
           <ellipse cx="30" cy="72" rx="12" ry="14" />
           <line x1="370" y1="115" x2="370" y2="80" />
           <ellipse cx="370" cy="72" rx="12" ry="14" />
-        </svg>
-      </div>
-
-      {/* Border bawah */}
-      <div className="flex items-center gap-2 mt-6">
-        <svg viewBox="0 0 160 20" className="flex-1 h-4 text-burgundy/40" fill="none">
-          <path d="M0 10 Q20 2,40 10 Q60 18,80 10 Q100 2,120 10 Q140 18,160 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-        </svg>
-        <Doodle type="heart" className="w-5 h-5 text-burgundy/50 shrink-0" />
-        <svg viewBox="0 0 160 20" className="flex-1 h-4 text-burgundy/40 scale-x-[-1]" fill="none">
-          <path d="M0 10 Q20 2,40 10 Q60 18,80 10 Q100 2,120 10 Q140 18,160 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
         </svg>
       </div>
 
