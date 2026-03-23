@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import CoverSection from '@/components/CoverSection';
@@ -14,9 +14,21 @@ import SectionDivider from '@/components/SectionDivider';
 
 export default function Home() {
   const [isOpened, setIsOpened] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const handleOpen = () => {
+    const audio = audioRef.current;
+    if (audio) {
+      audio.volume = 0.4;
+      audio.loop = true;
+      audio.play().catch(() => {});
+    }
+    setIsOpened(true);
+  };
 
   return (
     <main className="min-h-screen bg-cream text-burgundy relative">
+      <audio ref={audioRef} src="/audio/selfless.mp3" preload="auto" />
       <AnimatePresence mode="wait">
         {!isOpened ? (
           <motion.div
@@ -26,7 +38,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
             className="fixed inset-0 z-50 bg-cream overflow-y-auto"
           >
-            <CoverSection onOpen={() => setIsOpened(true)} />
+            <CoverSection onOpen={handleOpen} />
           </motion.div>
         ) : (
           <motion.div

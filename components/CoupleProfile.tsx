@@ -112,12 +112,12 @@ function PersonCard({
 
       {/* Info teks */}
       <div className={`flex flex-col ${reverse ? 'items-end text-right' : 'items-start text-left'}`}>
-        <p className="font-[family-name:var(--font-midnight-study)] text-xl text-burgundy/75 leading-tight">
-          {name}
-        </p>
         <h3 className="font-[family-name:var(--font-midnight-study)] text-4xl text-burgundy leading-tight">
           {nameHighlight}
         </h3>
+        <p className="font-[family-name:var(--font-midnight-study)] text-xl text-burgundy/75 leading-tight">
+          {name}
+        </p>
 
         <div className="mt-3">
           <p className="font-sans text-[10px] text-burgundy/45 uppercase tracking-widest mb-1">
