@@ -1,14 +1,15 @@
 'use client';
 
-import { motion } from 'motion/react';
+import { motion, type Variants } from 'motion/react';
 import { MailOpen } from 'lucide-react';
 import Image from 'next/image';
 import Doodle from './Doodle';
 
-const floatVariants = {
+const floatVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
-    opacity: 1, y: 0,
+    opacity: 1,
+    y: 0,
     transition: { duration: 0.7, delay: i * 0.15, ease: 'easeOut' }
   })
 };
