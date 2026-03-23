@@ -146,3 +146,8 @@ body {
   background-color: var(--color-cream);
   color: var(--color-burgundy);
 }
+
+/* Remove default background from Next.js Image wrappers */
+span[style*="box-sizing"] {
+  background: transparent !important;
+}

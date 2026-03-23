@@ -24,16 +24,7 @@ function InstagramButton({ handle }: { handle: string }) {
 
 function OvalPhoto({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="relative w-[145px] h-[177px]">
-      <svg width="0" height="0" style={{ position: 'absolute' }}>
-        <defs>
-          <clipPath id="oval2-clip" clipPathUnits="objectBoundingBox">
-            {/* Oval dalam koordinat 0-1 berdasarkan viewBox 736x895 */}
-            <ellipse cx="0.5" cy="0.5" rx="0.36" ry="0.40" />
-          </clipPath>
-        </defs>
-      </svg>
-
+    <div className="relative w-[145px] h-[177px] bg-transparent">
       {/* Foto dengan clip oval */}
       <div
         className="absolute z-10"
@@ -44,6 +35,7 @@ function OvalPhoto({ src, alt }: { src: string; alt: string }) {
           height: '80%',
           clipPath: 'ellipse(50% 50% at 50% 50%)',
           overflow: 'hidden',
+          background: 'transparent',
         }}
       >
         <Image
@@ -52,17 +44,18 @@ function OvalPhoto({ src, alt }: { src: string; alt: string }) {
           fill
           className="object-cover object-top"
           sizes="105px"
+          style={{ background: 'transparent' }}
         />
       </div>
 
-      {/* Frame Oval-2 di atas foto — pakai img tag agar SVG render sebagai image (transparent bg) */}
+      {/* Frame Oval-2 di atas foto */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/decorations/Oval-2.svg"
         alt=""
         aria-hidden="true"
         className="absolute inset-0 w-full h-full z-20 pointer-events-none"
-        style={{ objectFit: 'fill', border: 'none', outline: 'none', boxShadow: 'none', display: 'block' }}
+        style={{ objectFit: 'fill', border: 'none', outline: 'none', boxShadow: 'none', display: 'block', background: 'transparent' }}
       />
     </div>
   );
