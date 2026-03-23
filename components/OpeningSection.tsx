@@ -40,7 +40,7 @@ export default function OpeningSection() {
           <OvalFrame 
             className="oval-frame drop-shadow-sm opacity-80" 
             preserveAspectRatio="xMidYMid meet" 
-            viewBox="0 0 736 950"
+            viewBox="0 0 490.72 657.54"
           />
           
           {/* 3. Text Content inside Oval */}
