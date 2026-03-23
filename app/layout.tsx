@@ -38,6 +38,11 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
+const valentineDelight = localFont({
+  src: '../public/fonts/Valentine_Delight.otf',
+  variable: '--font-valentine',
+});
+
 const tNanti = localFont({
   src: '../public/fonts/TNanti-Demo.otf',
   variable: '--font-tnanti',
@@ -59,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${caveat.variable} ${justMe.variable} ${dancingScript.variable} ${mansalva.variable} ${bethEllen.variable} ${inter.variable} ${tNanti.variable} ${midnightStudy.variable}`}>
+    <html lang="en" className={`${caveat.variable} ${justMe.variable} ${dancingScript.variable} ${mansalva.variable} ${bethEllen.variable} ${inter.variable} ${tNanti.variable} ${midnightStudy.variable} ${valentineDelight.variable}`}>
       <body className="font-sans antialiased selection:bg-peach selection:text-burgundy" suppressHydrationWarning>
         {children}
       </body>

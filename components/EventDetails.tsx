@@ -29,10 +29,10 @@ function useCountdown(target: Date) {
 function CountUnit({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center gap-1">
-      <span className="font-[family-name:var(--font-caveat)] text-5xl font-semibold text-burgundy leading-none">
+      <span className="font-[family-name:var(--font-midnight-study)] text-5xl text-burgundy leading-none">
         {String(value).padStart(2, '0')}
       </span>
-      <span className="font-[family-name:var(--font-beth-ellen)] text-[10px] text-olive/70 uppercase tracking-widest">
+      <span className="font-[family-name:var(--font-midnight-study)] text-[10px] text-olive/70 uppercase tracking-widest">
         {label}
       </span>
     </div>
@@ -71,15 +71,15 @@ export default function EventDetails() {
 
       {/* Save The Date + Countdown */}
       <div className="text-center mb-10">
-        <p className="font-[family-name:var(--font-beth-ellen)] text-xs uppercase tracking-[0.3em] text-olive/60 mb-1">save the date</p>
-        <h2 className="font-[family-name:var(--font-caveat)] text-4xl font-semibold text-burgundy mb-6">The Wedding Day</h2>
+        <p className="font-[family-name:var(--font-valentine)] text-xs uppercase tracking-[0.3em] text-olive/60 mb-1">save the date</p>
+        <h2 className="font-[family-name:var(--font-midnight-study)] text-4xl text-burgundy mb-6">The Wedding Day</h2>
         <div className="flex justify-center gap-5 bg-burgundy/5 rounded-2xl py-5 px-4 mx-2">
           <CountUnit value={days} label="Days" />
-          <span className="font-[family-name:var(--font-caveat)] text-3xl text-olive/40 self-start mt-1">:</span>
+          <span className="font-[family-name:var(--font-midnight-study)] text-3xl text-olive/40 self-start mt-1">:</span>
           <CountUnit value={hours} label="Hours" />
-          <span className="font-[family-name:var(--font-caveat)] text-3xl text-olive/40 self-start mt-1">:</span>
+          <span className="font-[family-name:var(--font-midnight-study)] text-3xl text-olive/40 self-start mt-1">:</span>
           <CountUnit value={mins} label="Mins" />
-          <span className="font-[family-name:var(--font-caveat)] text-3xl text-olive/40 self-start mt-1">:</span>
+          <span className="font-[family-name:var(--font-midnight-study)] text-3xl text-olive/40 self-start mt-1">:</span>
           <CountUnit value={secs} label="Secs" />
         </div>
       </div>

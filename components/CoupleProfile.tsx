@@ -10,7 +10,7 @@ function InstagramButton({ handle }: { handle: string }) {
       href={`https://instagram.com/${handle.replace('@', '')}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-full border border-burgundy/30 text-burgundy/70 hover:bg-burgundy hover:text-cream transition-all duration-300 text-xs font-sans"
+      className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-full border border-burgundy/30 text-burgundy/70 hover:bg-burgundy hover:text-cream transition-all duration-300 text-xs font-[family-name:var(--font-tnanti)]"
     >
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -112,10 +112,10 @@ function PersonCard({
 
       {/* Info teks */}
       <div className={`flex flex-col ${reverse ? 'items-end text-right' : 'items-start text-left'}`}>
-        <p className="font-[family-name:var(--font-beth-ellen)] text-xl text-burgundy/75 leading-tight">
+        <p className="font-[family-name:var(--font-midnight-study)] text-xl text-burgundy/75 leading-tight">
           {name}
         </p>
-        <h3 className="font-[family-name:var(--font-just-me)] text-4xl text-burgundy leading-tight">
+        <h3 className="font-[family-name:var(--font-midnight-study)] text-4xl text-burgundy leading-tight">
           {nameHighlight}
         </h3>
 
