@@ -151,8 +151,8 @@ export default function CoupleProfile() {
 
         {/* Mempelai Wanita — foto kiri, teks kanan */}
         <PersonCard
-          name="Tsalsa K."
-          nameHighlight="Lael"
+          name="K. Lael"
+          nameHighlight="Tsalsa"
           parentLabel="Putri dari"
           father="Bpk. Sopyan Saori"
           mother="Ibu Neneng Siswati"

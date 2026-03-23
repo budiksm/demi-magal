@@ -32,7 +32,7 @@ export default function ClosingSection() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
-          <p className="font-[family-name:var(--font-smoky)] text-lg leading-relaxed text-burgundy/80 mb-8">
+          <p className="font-[family-name:var(--font-smoky)] text-2xl leading-relaxed text-burgundy/80 mb-8">
             &quot;Doa dan kehadiran kalian adalah hadiah terindah yang bisa kami terima. Sampai jumpa di hari yang paling kami tunggu-tunggu.&quot;
           </p>
 

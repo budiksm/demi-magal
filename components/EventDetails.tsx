@@ -70,8 +70,8 @@ export default function EventDetails() {
       <Doodle type="star" className="absolute top-20 right-6 w-2 h-2 text-olive/25 pointer-events-none" />
 
       {/* Save The Date + Countdown */}
-      <div className="text-center mb-10">
-        <p className="font-[family-name:var(--font-smoky)] text-2xl text-olive/70 mb-1">Save the Date</p>
+      <div className="text-center mb-6">
+        <p className="font-[family-name:var(--font-smoky)] text-4xl text-olive/70 mb-1">Save the Date</p>
         <h2 className="font-[family-name:var(--font-midnight-study)] text-4xl text-burgundy mb-6">The Wedding Day</h2>
         <div className="flex justify-center gap-5 bg-burgundy/5 rounded-2xl py-5 px-4 mx-2">
           <CountUnit value={days} label="Days" />
@@ -82,6 +82,54 @@ export default function EventDetails() {
           <span className="font-[family-name:var(--font-midnight-study)] text-3xl text-olive/40 self-start mt-1">:</span>
           <CountUnit value={secs} label="Secs" />
         </div>
+      </div>
+
+      {/* 8 Polaroid di bawah countdown */}
+      <div className="grid grid-cols-2 gap-3 mb-3">
+        {[0,1,2,3].map((i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20, rotate: [-2,1.5,-1,2.5][i] - 3 }}
+            whileInView={{ opacity: 1, y: 0, rotate: [-2,1.5,-1,2.5][i] }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.5, delay: i * 0.08, ease: 'easeOut' }}
+            className="relative bg-[#e8e4dc] rounded-lg overflow-hidden shadow-sm border border-olive/10"
+            style={{ aspectRatio: '3/4' }}
+          >
+            <div className="absolute inset-0 flex items-center justify-center">
+              <svg viewBox="0 0 60 48" className="w-10 h-8 text-olive/20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="4" y="12" width="52" height="32" rx="4" />
+                <circle cx="30" cy="28" r="9" /><circle cx="30" cy="28" r="5" />
+                <path d="M20 12 L24 4 H36 L40 12" />
+                <circle cx="48" cy="18" r="2" fill="currentColor" stroke="none" />
+              </svg>
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 h-7 bg-white/30" />
+          </motion.div>
+        ))}
+      </div>
+      <div className="grid grid-cols-2 gap-3 mb-10">
+        {[4,5,6,7].map((i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20, rotate: [-1.5,2,-2.5,1][i-4] - 3 }}
+            whileInView={{ opacity: 1, y: 0, rotate: [-1.5,2,-2.5,1][i-4] }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.5, delay: (i-4) * 0.08 + 0.3, ease: 'easeOut' }}
+            className="relative bg-[#e8e4dc] rounded-lg overflow-hidden shadow-sm border border-olive/10"
+            style={{ aspectRatio: '3/4' }}
+          >
+            <div className="absolute inset-0 flex items-center justify-center">
+              <svg viewBox="0 0 60 48" className="w-10 h-8 text-olive/20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="4" y="12" width="52" height="32" rx="4" />
+                <circle cx="30" cy="28" r="9" /><circle cx="30" cy="28" r="5" />
+                <path d="M20 12 L24 4 H36 L40 12" />
+                <circle cx="48" cy="18" r="2" fill="currentColor" stroke="none" />
+              </svg>
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 h-7 bg-white/30" />
+          </motion.div>
+        ))}
       </div>
 
       {/* Frame utama acara */}
