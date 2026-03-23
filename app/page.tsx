@@ -7,13 +7,8 @@ import CoverSection from '@/components/CoverSection';
 import OpeningSection from '@/components/OpeningSection';
 import QuranSection from '@/components/QuranSection';
 import CoupleProfile from '@/components/CoupleProfile';
-import LoveStory from '@/components/LoveStory';
 import EventDetails from '@/components/EventDetails';
-import Gallery from '@/components/Gallery';
-import RSVPSection from '@/components/RSVPSection';
-import GiftSection from '@/components/GiftSection';
 import ClosingSection from '@/components/ClosingSection';
-import Doodle from '@/components/Doodle';
 
 export default function Home() {
   const [isOpened, setIsOpened] = useState(false);
@@ -44,7 +39,7 @@ export default function Home() {
               <div className="hidden lg:flex w-[50%] sticky top-0 h-screen self-start flex-col items-center justify-center relative">
                 <Image
                   src="https://picsum.photos/seed/wedding-main/1200/1600"
-                  alt="Romeo and Juliet"
+                  alt="Tsalsa dan Budi"
                   fill
                   className="object-cover"
                   referrerPolicy="no-referrer"
@@ -61,11 +56,7 @@ export default function Home() {
                 </div>
                 <div className="w-full max-w-[520px] mx-auto px-6 lg:px-10 py-12">
                   <CoupleProfile />
-                  <LoveStory />
                   <EventDetails />
-                  <Gallery />
-                  <RSVPSection />
-                  <GiftSection />
                   <ClosingSection />
                 </div>
               </div>
