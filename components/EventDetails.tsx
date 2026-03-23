@@ -27,11 +27,18 @@ function useCountdown(target: Date) {
 }
 
 function CountUnit({ value, label }: { value: number; label: string }) {
+  const display = String(value).padStart(2, '0');
   return (
     <div className="flex flex-col items-center gap-1">
-      <span className="font-[family-name:var(--font-midnight-study)] text-5xl text-burgundy leading-none">
-        {String(value).padStart(2, '0')}
-      </span>
+      <motion.span
+        key={display}
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
+        className="font-[family-name:var(--font-midnight-study)] text-5xl text-burgundy leading-none"
+      >
+        {display}
+      </motion.span>
       <span className="font-[family-name:var(--font-midnight-study)] text-[10px] text-olive/70 uppercase tracking-widest">
         {label}
       </span>
@@ -61,16 +68,34 @@ export default function EventDetails() {
   return (
     <section className="relative py-16 px-4 overflow-hidden">
 
-      {/* Ornamen background luar frame */}
-      <Doodle type="baby-breath" className="absolute top-4 left-0 w-20 h-20 text-olive/15 -rotate-12 pointer-events-none" />
-      <Doodle type="baby-breath" className="absolute top-4 right-0 w-20 h-20 text-olive/15 rotate-12 pointer-events-none scale-x-[-1]" />
-      <Doodle type="tulip" className="absolute bottom-32 left-1 w-16 h-16 text-peach/15 rotate-6 pointer-events-none" />
-      <Doodle type="orchid" className="absolute bottom-32 right-1 w-16 h-16 text-olive/10 -rotate-6 pointer-events-none" />
-      <Doodle type="star" className="absolute top-16 left-6 w-3 h-3 text-peach/35 pointer-events-none" />
-      <Doodle type="star" className="absolute top-20 right-6 w-2 h-2 text-olive/25 pointer-events-none" />
+      {/* Ornamen background — float */}
+      {[
+        { type: 'baby-breath' as const, cls: 'absolute top-4 left-0 w-20 h-20 text-olive/15 -rotate-12', dy: -10, delay: 0 },
+        { type: 'baby-breath' as const, cls: 'absolute top-4 right-0 w-20 h-20 text-olive/15 rotate-12 scale-x-[-1]', dy: 10, delay: 1 },
+        { type: 'tulip' as const, cls: 'absolute bottom-32 left-1 w-16 h-16 text-peach/15 rotate-6', dy: -8, delay: 0.5 },
+        { type: 'orchid' as const, cls: 'absolute bottom-32 right-1 w-16 h-16 text-olive/10 -rotate-6', dy: 8, delay: 1.5 },
+      ].map((d, i) => (
+        <motion.div key={i} className={`${d.cls} pointer-events-none`}
+          animate={{ y: [0, d.dy, 0] }} transition={{ duration: 5 + i, delay: d.delay, repeat: Infinity, ease: 'easeInOut' }}>
+          <Doodle type={d.type} className="w-full h-full" />
+        </motion.div>
+      ))}
+
+      {/* Twinkling stars */}
+      {['absolute top-16 left-6 w-3 h-3 text-peach/35', 'absolute top-20 right-6 w-2 h-2 text-olive/25'].map((cls, i) => (
+        <motion.div key={i} className={`${cls} pointer-events-none`}
+          animate={{ scale: [1, 1.5, 1], opacity: [0.3, 1, 0.3] }}
+          transition={{ duration: 2 + i, repeat: Infinity, delay: i * 0.8 }}>
+          <Doodle type="star" className="w-full h-full" />
+        </motion.div>
+      ))}
 
       {/* Save The Date + Countdown */}
-      <div className="text-center mb-6">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }} transition={{ duration: 0.6 }}
+        className="text-center mb-6"
+      >
         <p className="font-[family-name:var(--font-smoky)] text-5xl text-olive/70 mb-1">Save the Date</p>
         <h2 className="font-[family-name:var(--font-midnight-study)] text-4xl text-burgundy mb-6">The Wedding Day</h2>
         <div className="flex justify-center gap-5 bg-burgundy/5 rounded-2xl py-5 px-4 mx-2">
@@ -82,7 +107,7 @@ export default function EventDetails() {
           <span className="font-[family-name:var(--font-midnight-study)] text-3xl text-olive/40 self-start mt-1">:</span>
           <CountUnit value={secs} label="Secs" />
         </div>
-      </div>
+      </motion.div>
 
       {/* 4 Polaroid di bawah countdown */}
       <div className="grid grid-cols-2 gap-3 mb-10">
